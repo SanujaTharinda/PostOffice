@@ -1,0 +1,299 @@
+form h1{                             /*dfdgdgsgggggggggggggggggggggggggdssssssssssssssssssgs*/
+	
+	font-size: 40px;
+	text-align: center;
+}
+
+
+form.userform label{
+	width: 20%;
+	float: left;
+	margin-bottom: 15px;
+}
+
+form.userform input{
+	width: 60%;
+}
+
+.female{
+	margin-right: 800px;
+
+}
+.female input{
+	width: 10%;
+}
+.male{
+	margin-right: 800px;
+}
+
+
+div.calenderfirst label{
+	width: 5%;
+	margin-top: 5px;
+	margin-left: 120px;
+	float: left;
+}
+
+div.calenderfirst select{
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+
+}
+
+div.calendersecond label{
+	width: 5%;
+	margin-top: 5px;
+	margin-left: 120px;
+	float: left;
+}
+
+div.calendersecond select{
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+
+}
+
+form div.calendersecond{
+	margin-top: 60px;
+}
+
+div.calenderthird label{
+	width: 5%;
+	margin-top: 5px;
+	margin-left: 120px;
+	/*float: left;*/
+}
+
+div.calenderthird select{
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+
+}
+
+form div.calenderthird{
+	margin-top: 60px;
+}
+
+div.job{
+	margin-top: 60px;
+	margin-left: 20px;
+
+}
+
+div.job label{
+	width: 5%;
+	margin-top: 10px;
+	float:left;
+
+}
+
+div.job select{
+	float: left;
+	margin-top: 10px;
+}
+
+div.jobtype{
+	margin-top: 61px;
+	margin-left: 20px;
+
+}
+
+div.jobtype label{
+	width: 14%;
+	margin-top: 10px;
+	float:left;
+	margin-left: 110px;
+
+}
+
+div.jobtype select{
+	/*float: left;
+	margin-right: 111px;*/
+	margin-top: 10px;
+}
+
+div.sign button{
+	margin-top: 40px;
+	width: 200px;
+	margin-left: 428px;
+	background-color:#bbb  ;
+	margin-bottom: 20px;
+}
+
+
+h2{
+	font-size: 15px;
+	margin-left: 60px;
+}
+
+
+
+main{
+	margin-top: 35px;
+}
+
+
+.userform{                                   /*fbsdddddddddddddddddddddddddddddddddddddddddddddddddddd8*/
+	margin-left: 225px;
+	width: 70%;
+	background-color: #eee;
+	margin-top: 10px;
+
+}
+p{
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+a{
+	color: black;
+}
+
+h1.employee{
+	margin-left: 114px;
+
+}
+input{
+	font-size: 14px;
+}
+
+h1.user{
+	margin-top: 10px;
+	margin-left: 149px;
+
+}
+
+form div.error{
+	margin-left: 230px;
+	color: red;
+}
+
+.field{
+	width: 300px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.main_user{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.employee_user{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.employee{
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+*.field .admin button{
+	width: 250px;
+	margin-left: 25px;
+}
+
+.field button{
+	width: 200px;
+	margin-left: 50px;
+	margin-bottom: 5px;
+}
+
+.right{
+	float: right;
+	margin-bottom: 20px;
+}
+
+.left{
+	float: left;
+
+}
+
+.language{
+	margin-bottom:20px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.searching{	
+	margin-top: 20px;
+	background-color: #eee;
+}
+
+.search_e{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.search_e input{
+	margin-left: 30%;
+	width: 40%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+
+}
+
+
+/*table.masterlist{
+	width: auto;
+	border-collapse: collapse; 
+
+}
+
+table.masterlist th{
+	background: #aaa;
+	text-align: left;
+}
+
+table.masterlist th,table.masterlist td{
+	padding:10px;
+    border-bottom: 1px solid #aaa;
+}*/
+
+
+body {
+  background-color: white;
+}
+
+table {
+  /*font-family: arial, sans-serif;*/
+  border-collapse: collapse;
+  width: 100%;
+  /*table-layout: fixed;*/
+  border-spacing: 5px;
+}
+
+th{
+	background-color: #aaa;
+}
+
+td, th {
+  border: 1px solid white;
+  padding: 4px 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.err{
+	text-align: center;
+	color: red;
+	font-size: 20px;
+}
+
+.action a{
+	margin-left: 300px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.action input{
+	margin-top: 20px;
+	margin-right: 300px;
+}

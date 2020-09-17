@@ -1,0 +1,805 @@
+.login {
+	margin: 0;
+	padding: 0;
+	background-image: url("../img/loginPageCover.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: sans-serif;
+}
+
+.login-box {
+
+	width: 320px;
+	height: 420px;
+	background: #000;
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 20px;
+}
+
+.avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+
+}
+
+h1 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.login input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.login input[type="text"],
+input[type="password"] {
+	font-family: "Roboto Condensed", sans-serif;
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+
+}
+
+.login button[type="submit"] {
+	font-family: "Roboto Condensed", sans-serif;
+	border: none;
+	outline: none;
+	height: 40px;
+	width: 260px;
+	background: rgba(199, 55, 55, 0.7);
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.login button :hover,
+.login button:focus {
+	background-color: rgb(206, 73, 50);
+}
+
+
+
+header {
+	background: #eee;
+	overflow: auto;
+}
+
+header .appname {
+	float: left;
+}
+
+header .loggedin {
+	float: right;
+}
+
+
+/*header.php style*/
+.menu {
+	background: rgb(0, 100, 0);
+	text-align: center;
+
+}
+
+.menu ul {
+	display: inline-flex;
+	list-style: none;
+	color: #fff;
+}
+
+.menu ul li {
+	width: 120px;
+	margin: 15px;
+	padding: 15px;
+}
+
+
+.menu ul li:hover {
+	background: #2bab0d;
+	border-radius: 10px;
+}
+
+.menu .fa {
+	margin-right: 8px;
+}
+
+.submenu {
+	display: none;
+}
+
+.menu ul li:hover .submenu {
+	display: block;
+	position: absolute;
+	background-color: rgb(0, 100, 0);
+	margin-top: 15px;
+	margin-left: -15px;
+}
+
+.menu ul li:hover .submenu ul {
+	display: block;
+	margin: 10px;
+}
+
+.menu ul li:hover .submenu ul li {
+	width: 150px;
+	padding: 10px;
+	border-bottom: 1px #fff;
+	background: transparent;
+	border-radius: 10px;
+	text-align: left;
+
+}
+
+.menu ul li:hover .submenu ul li:last-child {
+	border-bottom: none;
+}
+
+.menu ul li:hover .submenu ul li a:hover {
+	color: #b2ff00;
+}
+
+
+/*=================#############======================
+			 							  CSS for HOME(Login) Page
+							===================#############======================*/
+
+
+html,
+body {
+	height: 100%;
+}
+
+/*=========================================
+                HOME section
+===========================================*/
+
+#home {
+	height: 100%;
+
+}
+
+#home-cover {
+	height: 100%;
+	background-image: url("../img/cover.jpg");
+	background-color: red;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+#home-content-box {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+#home-content-box-inner {
+	padding-top: 170px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.Item {
+	padding: 20px 0 20px 0;
+	margin: 0 0 70px 30px;
+	cursor: pointer;
+}
+
+.Item-icon i {
+	color: #ffffff;
+	float: left;
+	padding: 26px;
+	margin-right: 25px;
+	width: 75px;
+	height: 75px;
+	text-align: center;
+}
+
+.Item:hover .Item-icon i {
+	color: rgb(85, 14, 12);
+
+}
+
+.Item-title {
+	margin: 12px 0 0 0;
+
+}
+
+
+/*=========================================
+                  BUTTONS
+===========================================*/
+
+.btn-1 {
+	padding: 30px 35px 30px 35px;
+}
+
+.btn-2 {
+	padding: 30px 20px 30px 20px;
+}
+
+.btn-3 {
+	padding: 30px 27px 30px 27px;
+}
+
+.btn-4 {
+	padding: 30px 70px 30px 70px;
+}
+
+.btn-5 {
+	padding: 30px 40px 30px 40px;
+}
+
+.btn-6 {
+	padding: 30px 20px 30px 20px;
+}
+
+
+.btn-7 {
+	padding: 30px 20px 30px 20px;
+}
+
+.btn-8 {
+	padding: 30px 30px 30px 30px;
+}
+
+.btn-9 {
+	padding: 30px 70px 30px 70px;
+}
+
+.btn-10 {
+	padding: 30px 40px 30px 40px;
+}
+
+.btn-11 {
+	padding: 30px 22px 30px 22px;
+}
+
+
+/*===========================
+            ANIMATE
+=============================*/
+
+.btn-logout {
+	animation-delay: .2s;
+}
+
+#home-cover,
+#home-heading,
+#home-btn {
+	animation-duration: 1s;
+}
+
+#home-cover {
+	animation-delay: .1s;
+}
+
+
+
+/*=================#############=====================
+			 							  	CSS for ABOUT Page
+							===================#############====================*/
+
+
+/*================================
+            ABOUT section
+==================================*/
+
+#about .container {
+	background-color: rgb(201, 0, 0);
+	width: auto;
+}
+
+#about-bg-diagonal {
+	width: 60%;
+	height: 700px;
+	float: right;
+	background-image: url(../img/b.jpg);
+	border-left: 200px solid rgb(201, 0, 0);
+	border-top: 700px solid transparent;
+
+}
+
+#about-content-box {
+	float: left;
+	height: 700px;
+	padding-left: 50px;
+}
+
+#about-content-box-outer {
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+
+#about-content-box-inner {
+	display: table-cell;
+	vertical-align: middle;
+
+}
+
+#about .title h3 {
+	text-align: left;
+	font-size: 45px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	letter-spacing: 2px;
+	color: black;
+	font-weight: 700;
+	margin: 0 0 50px 0;
+}
+
+#about .content-title h3 {
+	text-align: left;
+	font-size: 30px;
+	color: white;
+	font-weight: 700;
+	margin: 0 0 30px 0;
+}
+
+#about .content-title-underline {
+	margin: 0 0 30px 0;
+	width: 260px;
+	height: 3px;
+	background-color: yellow;
+
+}
+
+#about-des p {
+	font-size: 18px;
+	color: white;
+	margin-bottom: 30px;
+}
+
+/*============================================
+                OUR TEAM  section
+==============================================*/
+
+#team-content-box {
+	padding: 30px 0 0 0;
+	background-image: url(../img/cover.jpg);
+}
+
+#our-team .content-title h3 {
+	font-size: 30px;
+	color: white;
+	font-weight: 700;
+	text-align: center;
+	margin: 30px 0 30px 0;
+}
+
+#our-team .content-title-underline {
+	width: 30px;
+	height: 3px;
+	background-color: yellow;
+	margin: 0 auto 30px auto;
+}
+
+.team-member {
+	margin: 0 20px 0 20px;
+}
+
+.team-member-info {
+	padding: 10px 0 30px 0;
+}
+
+h4.team-member-name {
+	font-size: 21px;
+	color: white;
+	font-weight: 600;
+	letter-spacing: 1px;
+	padding-top: 20px;
+}
+
+
+/*=================#############=====================
+			 							  		Generic CSS
+							===================#############====================*/
+
+
+/*===========================
+         NAVIGATION BAR
+=============================*/
+
+.navbar {
+	padding: 20px 0;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.top-nav {
+	background: rgb(255, 255, 255);
+	background-image: url(../img/);
+	padding: 15px 0;
+}
+
+.nav-wrapper {
+	padding: 0;
+}
+
+.navbar-nav {
+	float: right;
+}
+
+.navbar-nav>li>a {
+	color: rgb(252, 0, 0);
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+}
+
+.navbar-nav>li>a:hover,
+.navbar-nav>li>a:focus {
+	background-color: rgb(243, 24, 24);
+	color: #ffffff;
+}
+
+.navbar-toggle {
+	background-color: red;
+	border: 1px solid #fff;
+	border-radius: 0;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+.navbar-collapse {
+	max-height: none ! important;
+}
+
+.navbar-brand {
+	padding: 7px 0 0 20px;
+
+}
+
+
+
+/*=========================================
+                Generic BUTTONS
+===========================================*/
+
+.btn-logout {
+	font-family: "Roboto Condensed", sans-serif;
+	border-width: 2px;
+	border-radius: 0px;
+	font-size: 11px;
+	font-weight: 500;
+	border-color: rgb(255, 0, 0);
+	color: rgb(255, 255, 255);
+}
+
+.btn-logout:hover,
+.btn-logout:focus {
+	border-color: rgb(116, 11, 11);
+	background-color: rgba(202, 47, 68, 0.2);
+	color: rgb(224, 118, 69)
+}
+
+.btn-general {
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	border-width: 1px;
+	border-radius: 0px;
+	font-size: 18px;
+	font-weight: 505;
+	letter-spacing: .5px;
+	border-color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
+	background-color: rgba(201, 58, 53, 0.8);
+}
+
+.btn-general:hover,
+.btn-general:focus {
+	border-color: rgb(102, 14, 11);
+	border-width: 1px;
+	background-color: rgba(255, 255, 255);
+	color: rgba(201, 58, 53);
+}
+
+/*=================================================
+                Parallax Effect
+===================================================*/
+
+.bg-parallax {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+/*=================================================
+                MinorStaffDetails
+===================================================*/
+body.bodyBackground {
+	margin: 0;
+	padding: 0;
+	background-image: url("../img/minorStaffDetailsBodyCover.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: sans-serif;
+
+}
+
+.searchBar {
+	width: 100%;
+	height: 80px;
+	display: inline-flex;
+	background-color: rgb(52, 58, 64);
+}
+
+.search {
+	width: 50%;
+	float: left;
+}
+
+.search input {
+	margin-top: 20px;
+	width: 60%;
+	height: 40px;
+	border-radius: 10px;
+	margin-left: 17%;
+	margin-right: 1%;
+	text-align: center;
+}
+
+.searchBar form button {
+	margin-top: 20px;
+	float: right;
+	background-color: darkgrey;
+	width: 20%;
+	text-align: center;
+	height: 40px;
+	font-size: 16px;
+	border-radius: 10px;
+}
+
+.add {
+	width: 25%;
+}
+
+.add button {
+	margin-top: 20px;
+	float: right;
+	width: auto;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #0a5b66;
+	font-size: 16px;
+}
+
+.edit {
+	background-color: rgb(52, 58, 64);
+	color: white;
+	width: 80px;
+	font-size: 16px;
+	height: 40px;
+	border-radius: 20px;
+}
+
+.delete {
+	background-color: rgb(149, 7, 7);
+	color: white;
+	margin-top: 15px;
+	width: 80px;
+	font-size: 16px;
+	height: 40px;
+	border-radius: 20px;
+}
+
+.margin {
+	width: 50%;
+}
+
+.themeBtn {
+	margin-top: 15px;
+	margin-right: 30%;
+	float: right;
+	background: #106283;
+	color: #ffffff !important;
+	font-size: 15px;
+	font-weight: 500;
+	height: 50px;
+	line-height: 0.8;
+	padding: 18px 30px;
+	border-radius: 1px;
+	letter-spacing: 0.5px;
+	border: 0px !important;
+	cursor: pointer;
+	border-radius: 100px;
+
+}
+
+a:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.themeBtn:hover {
+	background: rgba(25, 179, 206, 0.459);
+	color: #ffffff;
+	box-shadow: 0 10px 25px -2px #0cbba4;
+}
+
+
+.detailsTable {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	table-layout: fixed;
+	border-spacing: 5px;
+	font-size: 20px;
+	margin-top: 20px;
+	font-family: monospace;
+	margin-bottom: 20px;
+}
+
+td,
+th {
+	border: 1px solid white;
+	padding: 4px 8px;
+	text-align-last: center;
+}
+
+th {
+	background: #c92525;
+	color: white;
+	height: 50px;
+	font-family: arial, sans-serif;
+	font-size: 25px;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+}
+
+tr:nth-child(even) {
+	background-color: rgb(0, 0, 0, 0.5);
+}
+
+tr {
+	height: 40px;
+	color: black;
+}
+
+body {
+	background-color: white;
+}
+
+td {
+	color: black;
+	font-weight: bolder;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	font-family: monospace;
+	font-size: 20px;
+}
+
+/*=================================================
+                AddEmployee
+===================================================*/
+
+
+.userform {
+	margin-left: 15%;
+	width: 70%;
+	background: linear-gradient(to left, #95A19F, #D4E2DF);
+	margin-top: 30px;
+	border-radius: 20px;
+	opacity: 1;
+
+}
+
+.userform h1 {
+	font-size: 40px;
+}
+
+.userform p {
+	margin-left: 5%;
+}
+
+.userform label {
+	width: 20%;
+	height: auto;
+	float: left;
+	margin-bottom: 15px;
+}
+
+.userform input {
+	width: 54%;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 20px;
+}
+
+.radio-group {
+	margin-left: 10%;
+	margin-bottom: 2%;
+}
+
+.radio-group input {
+	width: 2%;
+}
+
+.userform h2 {
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 10%;
+}
+
+.calenderfirst label {
+	width: 5%;
+	margin-left: 14%;
+}
+
+.calenderfirst select {
+	float: left;
+	margin-top: 2px;
+	;
+	border-radius: 20px;
+}
+
+.job {
+	margin-top: 5%;
+}
+
+.job select {
+	border-radius: 20px;
+}
+
+.job label {
+	margin-left: 5%;
+	width: 5%;
+	text-align: center;
+}
+
+.jobtype label {
+	color: red;
+	font-weight: bold;
+	margin-left: 10%;
+}
+
+.userform button {
+	background-color: cornflowerblue;
+}
+
+.sign button {
+	width: 20%;
+	margin-left: 40%;
+	margin-bottom: 20px;
+	border-radius: 20px;
+}
+
+.language {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.language a {
+	color: black;
+	font-weight: 800;
+}
+
+.error {
+	margin-left: 25%;
+	color: red;
+}
