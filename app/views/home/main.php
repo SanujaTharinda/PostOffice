@@ -22,6 +22,11 @@
 
         <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
 
+            <!-- CSS Chat Box Style Sheet -->
+    <link rel="stylesheet" href="<?php echo PUBLICROOT?>css/chat-box-styles.css"/>
+    
+
+
         
 
     </head>
@@ -137,6 +142,9 @@
 
             <!--custom JS-->    
             <script src="<?php echo PUBLICROOT; ?>js/custom.js"></script>
+
+             <!-- Messaging JS -->
+             <script src="<?php echo PUBLICROOT; ?>js/messaging.js"></script>
         
     </body>
 

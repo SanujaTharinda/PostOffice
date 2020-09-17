@@ -25,6 +25,13 @@
 
     <!--style CSS-->
     <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/style.css">
+        <!-- CSS Chat Box Style Sheet -->
+        <link rel="stylesheet" href="<?php echo PUBLICROOT?>css/chat-box-styles.css"/>
+    
+
+    <!-- Font Awesome -->
+
+    <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
 
 
 
@@ -157,6 +164,8 @@
     <script src="<?php echo PUBLICROOT; ?>js/main.js"></script>
 
     <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
+     <!-- Messaging JS -->
+     <script src="<?php echo PUBLICROOT; ?>js/messaging.js"></script>
 
 </body>
 

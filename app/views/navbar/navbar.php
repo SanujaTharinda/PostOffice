@@ -1,4 +1,4 @@
-
+<?php require_once APPROOT."/views/chat-box/chat-box.php" ?>
 <header>
 
                 <nav class="navbar top-nav navbar-fixed-top" role="navigation">
@@ -44,7 +44,7 @@
                                     
 
 
-
+                                    <li id = "message-button"><button >Message</button></li>
                                     <li><a class="btn btn-logout" href="<?php echo LOGOUT_CLICK;?>">Logout</a></li>
 
                                     
