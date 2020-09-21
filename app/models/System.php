@@ -1,5 +1,4 @@
 <?php
-require_once APPROOT .'/models/System.php'; 
 
 class System{
     private $database;
