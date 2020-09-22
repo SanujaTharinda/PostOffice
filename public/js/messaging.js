@@ -2,10 +2,15 @@
 $("#message-button").on("click", function () {
   if ($(".chat-box").hasClass("chat-box-shown")) {
     $(".chat-box").removeClass("chat-box-shown");
-    $('.chat-container').css("z-index", -1);
+    setTimeout(function () {
+      $('.chat-container').css("z-index", -1);
+    }, 300);
+
   } else {
     $(".chat-box").addClass("chat-box-shown");
     $('.chat-container').css("z-index", 1);
+
+
 
   }
 });
@@ -82,11 +87,6 @@ function chatClick(chatId) {
 }
 
 function displayChatMessages(data, chatId) {
-  // data.sort(function (first, second) {
-  //   if (first.id > second.id) return -1;
-  //   if (first.id < second.id) return 1;
-  //   return 0;
-  // });
 
   let messages = document.getElementById("chat-messages");
   messages.innerHTML = "";
@@ -105,6 +105,14 @@ function displayChatMessages(data, chatId) {
 
     messages.appendChild(body);
   }
+
+  updateMessagesScroll();
+}
+
+
+function updateMessagesScroll() {
+  var element = document.getElementById("chat-messages");
+  element.scrollTop = element.scrollHeight;
 }
 
 function checkReplyContent(text) {

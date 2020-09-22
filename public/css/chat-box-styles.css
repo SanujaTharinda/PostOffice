@@ -14,7 +14,6 @@ body {
 
 .chat-container {
     margin-top: 5%;
-    z-index: -1;
     position: absolute;
     width: 100%;
     font-family: "Roboto Condensed", sans-serif;
@@ -22,7 +21,9 @@ body {
     height: 80%;
 }
 
+
 .chat-box {
+
     float: right;
     height: 100%;
     width: 50%;
@@ -276,6 +277,7 @@ body {
 @media(max-width: 900px) {
     .chat-box {
         float: right;
+        margin-top: 7%;
         height: 100%;
         width: 100%;
         background-color: rgb(243, 24, 24);
