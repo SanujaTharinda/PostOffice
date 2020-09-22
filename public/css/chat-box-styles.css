@@ -174,11 +174,14 @@ body {
 .chat {
     border-bottom: solid;
     border-color: #e8ead3;
-
     height: 10%;
     background-color: whitesmoke;
     padding: 6%;
     cursor: pointer;
+}
+
+.chat-active {
+    background-color: #ff414d;
 }
 
 .chat:hover {

@@ -20,6 +20,14 @@ $("#reply-send").on("click", function () {
   sendReply($("#reply-area").val());
 });
 
+//Send Reply on Enter Press..
+
+$("#reply-area").keypress(function (e) {
+  if (e.which == 13) {
+    sendReply($("#reply-area").val());
+  }
+});
+
 //Display Chats...
 $(document).ready(getChats);
 
@@ -64,7 +72,22 @@ function displayChats(data) {
 
 let selectedChat = "default";
 
+function unselectChat(chat) {
+  if (selectedChat != "default") {
+    console.log("Unselecting...");
+    document.getElementById(chat).classList.remove("chat-active");
+  }
+}
+
+function selectChat(chat) {
+  console.log("Selecting...");
+  document.getElementById(chat).classList.add("chat-active");
+}
+
+
 function chatClick(chatId) {
+  unselectChat("chat-" + selectedChat);
+  selectChat(chatId);
   chatId = chatId.replace("chat-", "");
   selectedChat = chatId;
 
@@ -118,9 +141,9 @@ function updateMessagesScroll() {
 function checkReplyContent(text) {
   let withoutSpace = text.trim();
   if (withoutSpace.length > 0) {
-    document.getElementById("reply-send").style.display = "inline";
+    appearSendIcon();
   } else {
-    document.getElementById("reply-send").style.display = "none";
+    disappearSendIcon();
   }
 }
 
@@ -137,9 +160,10 @@ function sendReply(message) {
     success: function (data) {
       displaySentMessage(message);
       clearReplyBox();
+      disappearSendIcon();
     },
   });
-  document.getElementById("reply-send").style.display = "none";
+
 }
 
 function displaySentMessage(message) {
@@ -148,10 +172,18 @@ function displaySentMessage(message) {
   body.innerHTML = message;
   body.classList.add("sent-message");
   messages.appendChild(body);
+  updateMessagesScroll();
 }
 
 function clearReplyBox() {
-
   document.getElementById("reply-area").value = "";
 
+}
+
+function appearSendIcon() {
+  document.getElementById("reply-send").style.display = "inline";
+}
+
+function disappearSendIcon() {
+  document.getElementById("reply-send").style.display = "none";
 }
