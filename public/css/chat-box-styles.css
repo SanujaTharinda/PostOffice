@@ -14,7 +14,7 @@ body {
 
 .chat-container {
     margin-top: 5%;
-    z-index: 2;
+    z-index: -1;
     position: absolute;
     width: 100%;
     font-family: "Roboto Condensed", sans-serif;

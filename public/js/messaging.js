@@ -2,8 +2,11 @@
 $("#message-button").on("click", function () {
   if ($(".chat-box").hasClass("chat-box-shown")) {
     $(".chat-box").removeClass("chat-box-shown");
+    $('.chat-container').css("z-index", -1);
   } else {
     $(".chat-box").addClass("chat-box-shown");
+    $('.chat-container').css("z-index", 1);
+
   }
 });
 
