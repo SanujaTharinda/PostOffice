@@ -74,7 +74,7 @@
 
                     </div>
 
-                    <div class="reply-box">
+                    <div id="reply-box">
                         <textarea name="" oninput= "checkReplyContent(this.value)" placeholder="Your Message..." id="reply-area"></textarea>
 
 

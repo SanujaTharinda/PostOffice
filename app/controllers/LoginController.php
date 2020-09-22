@@ -26,18 +26,23 @@ class LoginController extends Controller{
         $userType = strtolower($this->userModel->getUserType($username));
         session_start();
 
-        $_SESSION['username'] = $username;
-        $_SESSION['usertype'] = $userType;
+        
 
-
-
-        if(!$isValid or !isset($userType)){
+        if(isset($_SESSION['username'])){
             redirect("LoginController");
         }else{
-            redirect("HomeController/homePage/$userType");
+            $_SESSION['username'] = $username;
+            $_SESSION['usertype'] = $userType;
+            if(!$isValid or !isset($userType)){
+                redirect("LoginController");
+            }else{
+                redirect("HomeController/homePage/$userType");
+            }
+    
+            
         }
 
-        
+
 
       
 

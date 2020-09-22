@@ -229,7 +229,7 @@ body {
 }
 
 
-.reply-box {
+#reply-box {
     width: 80%;
     display: inline-block;
     height: 15%;

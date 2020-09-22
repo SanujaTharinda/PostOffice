@@ -19,6 +19,8 @@ class NavbarController extends Controller{
     }
 
     public function logout(){
+        session_start();
+        session_destroy();
         redirect("LoginController");
     }
 

@@ -102,11 +102,7 @@ function chatClick(chatId) {
     },
   });
 
-  $("#reply-box").on('keypress', function (e) {
-    if (e.which == 13) {
-      alert('You pressed enter!');
-    }
-  });
+
 }
 
 function displayChatMessages(data, chatId) {
