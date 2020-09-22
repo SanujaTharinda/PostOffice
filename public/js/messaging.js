@@ -32,6 +32,7 @@ $("#reply-area").keypress(function (e) {
 $(document).ready(getChats);
 
 function getChats() {
+  document.getElementById("reply-box").setAttribute("display", "inline-block");
   $.ajax({
     type: "GET",
     data: {},
@@ -86,6 +87,7 @@ function selectChat(chat) {
 
 
 function chatClick(chatId) {
+  document.getElementById("reply-box").style.display = "inline-block";
   unselectChat("chat-" + selectedChat);
   selectChat(chatId);
   chatId = chatId.replace("chat-", "");

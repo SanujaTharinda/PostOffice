@@ -231,11 +231,12 @@ body {
 
 #reply-box {
     width: 80%;
-    display: inline-block;
+    display: none;
     height: 15%;
 
 
 }
+
 
 #reply-area {
     display: inline-block;
