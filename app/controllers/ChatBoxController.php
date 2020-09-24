@@ -2,12 +2,15 @@
 
 
 require_once APPROOT .'/models/Chat.php'; 
+require_once APPROOT .'/models/User.php'; 
 
 class ChatBoxController extends Controller{
     private $chatModel;
+    private $userModel;
 
     public function __construct(){
         $this->chatModel = new Chat();
+        $this->userModel = new User();
     }
 
     public function loadChats(){
@@ -30,7 +33,32 @@ class ChatBoxController extends Controller{
         $sender = $_SESSION['username'];
         $content = $_POST['content'];
         $receiver = $_POST['receiver'];
-        $this->chatModel->sendMessage($sender,$receiver, $content);
+        if($sender == $receiver){
+            echo "Message Not Sent...";
+            return;
+        }else{
+            $this->chatModel->sendMessage($sender,$receiver, $content);
+            echo "Message Sent Successfully...";
+        }
+    }   
+       
+
+    public function getUsers(){
+        $username = $_POST['name'];
+        $list = $this->userModel->getUsersList($username);
+        echo json_encode($list);
+
+
+    }
+
+    public function checkUserExist(){
+        $username = $_POST['name'];
+        if(!isset($username)){
+            echo false;
+            return;
+        }
+        $exists = $this->userModel->userExists($username);
+        echo $exists;
     }
 
 

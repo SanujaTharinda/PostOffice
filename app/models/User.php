@@ -34,6 +34,21 @@
             
         }
 
+        public function getUsersList($username){
+           $this->db->query("SELECT email FROM $this->user_log WHERE email LIKE '$username%'");
+         
+           $this->db->execute();
+           return $this->db->resultSet();
+           
+
+        }
+
+
+        public function userExists($username){
+            $this->db->query("SELECT email FROM $this->user_log WHERE EXISTS (SELECT email FROM $this->user_log WHERE email = $username)");
+            return $this->db->single();
+        }
+
         public function getUserType($username){
             $row = $this->findUserByEmail($username);
             return $row->usertype;

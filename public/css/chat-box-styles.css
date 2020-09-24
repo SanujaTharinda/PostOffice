@@ -97,8 +97,11 @@ body {
     color: #f4f4f4;
 }
 
+/* New Message Box */
+
 #new-message-box {
     display: inline-block;
+    z-index: 2;
     color: white;
     background-color: #ededed;
     width: 28%;
@@ -108,8 +111,32 @@ body {
     position: absolute;
     z-index: 3;
     margin: 14% 10% 20% 63%;
+    display: none;
 
 
+}
+
+
+
+
+
+
+#new-message-title {
+
+    padding: 0.5%;
+}
+
+#message-to {
+    margin-top: 1%;
+    color: black;
+}
+
+#to {
+    color: black;
+}
+
+#to-input {
+    width: 50%;
 }
 
 #message-title {
@@ -121,8 +148,22 @@ body {
 }
 
 #message-body {
-    margin: 4%;
+    color: black;
+    margin: 10px auto;
+    width: 100%;
+
     height: 100%;
+}
+
+#message-body-form {
+    height: 100%;
+    width: 100%;
+}
+
+
+#message-body-text-area {
+    width: 85%;
+    height: 46%;
 }
 
 #username-box {
@@ -144,20 +185,38 @@ body {
 
 #message-footer {
     width: 100%;
-
+    color: black;
     bottom: 2%;
     position: absolute;
 }
 
-#send-button {
-    display: inline-block;
+.send-button {
+    border-radius: 0.8rem;
+    border: none;
+    background-color: white;
     margin-right: 20px;
-    width: 20%;
+    width: 18%;
 }
+
+.send-button-enabled:hover {
+    background-color: #ff414d;
+}
+
+
+
+
 
 #cancel-button {
     width: 20%;
+    border-radius: 0.8rem;
+    border: none;
+    background-color: white;
 }
+
+#cancel-button:hover {
+    background-color: #ff414d;
+}
+
 
 
 

@@ -174,7 +174,8 @@
             <!-- Messaging JS -->
             <script src="<?php echo PUBLICROOT; ?>js/messaging.js"></script>
             
-    <script src="main.js"></script>
+            <script src="main.js"></script>
+
 
 
 

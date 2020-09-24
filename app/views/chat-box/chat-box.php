@@ -1,4 +1,4 @@
-<!-- 
+
 
 
 
@@ -8,19 +8,54 @@
 <div id="new-message-box">
 
     <div id="message-title">
-
-        <p>New Message</p>
-
-
+        <div id="new-message-title">
+           <label for="">New Message</label> 
+    
+        </div>
     </div>
+
+    <div id = "message-to">
+    <form action="">
+        <label id='to'>To</label>
+        <input list="browse-users" type="text" id="to-input" oninput="listUsers(this.value)">
+        <datalist id="browse-users">
+            
+                   
+        </datalist>
+
+      
+    </form>
+    
+    
+    </div>
+
+
 
     <div id="message-body">
 
+    <form action="" id="message-body-form">
+        <label >Message</label><br>
+        <textarea name=""id="message-body-text-area"></textarea>
+    </form>
+
 
     </div>
 
+
+    <div id="message-footer">
+            <form >
+                <input type="button" value="Send" class="send-button" disabled=true onclick="sendMessageToNewChat()"> 
+                <input type="button" value="Cancel" id="cancel-button">
+            </form>
+                
+
+    </div>
+    
 </div>
- -->
+
+
+
+
 
 
 
