@@ -73,6 +73,7 @@ function sendMessageToNewChat() {
     url: "http://localhost/PostOffice/ChatBoxController/sendReply",
     success: function (data) {
       console.log(data);
+      getChats();
     },
   });
 }
@@ -106,24 +107,39 @@ function getChats() {
 }
 
 function displayChats(data) {
+  let sent = data.pop();
+  let received = data.pop();
+  for (send of sent) {
+    data.push(send);
+  }
+
+  for (receive of received) {
+    data.push(receive);
+  }
+
   data.sort(function (first, second) {
     if (first.id > second.id) return -1;
     if (first.id < second.id) return 1;
     return 0;
   });
-  let senders = new Set();
+  let interactors = new Set();
   let chats = document.getElementById("messages-tab");
   chats.innerHTML = "";
-  for (sender of data) {
-    let senderName = sender["sender_name"];
-    if (senders.has(senderName)) {
+  for (interact of data) {
+    if ("sender_name" in interact) {
+      var interactName = interact["sender_name"];
+    } else {
+      var interactName = interact["reciever_name"];
+    }
+
+    if (interactors.has(interactName)) {
       continue;
     }
-    senders.add(senderName);
-    let id = "chat-" + senderName;
+    interactors.add(interactName);
+    let id = "chat-" + interactName;
 
     let chat = document.createElement("div");
-    chat.innerHTML = "<p>" + sender["sender_name"] + "</p>";
+    chat.innerHTML = "<p>" + interactName + "</p>";
     chat.classList.add("chat");
     chat.setAttribute("id", id);
     chat.addEventListener("click", function () {

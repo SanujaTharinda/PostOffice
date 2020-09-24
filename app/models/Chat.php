@@ -18,6 +18,14 @@ class Chat{
         $this->database->bind(":reciever_name", $username);
         $this->database->execute();
         $result = $this->database->resultSet();
+        return array($result, $this->getSentChats($username));
+    }
+
+    public function getSentChats($username){
+        $this->database->query("SELECT id,reciever_name FROM $this->messagesTable WHERE sender_name=:sender_name");
+        $this->database->bind(":sender_name", $username);
+        $this->database->execute();
+        $result = $this->database->resultSet();
         return $result;
     }
 
