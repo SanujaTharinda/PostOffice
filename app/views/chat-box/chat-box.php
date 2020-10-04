@@ -47,6 +47,11 @@
                 <input type="button" value="Send" class="send-button" disabled=true onclick="sendMessageToNewChat()"> 
                 <input type="button" value="Cancel" id="cancel-button">
             </form>
+
+            <div id="message-status">
+            
+            
+            </div>
                 
 
     </div>
@@ -105,8 +110,7 @@
 
                 <div class="messages">
                     <div class="messages-box" id="chat-messages">
-                       <h2>No Chat Selected...</h2>
-
+                    
                     </div>
 
                     <div id="reply-box">

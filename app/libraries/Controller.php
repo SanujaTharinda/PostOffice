@@ -2,7 +2,7 @@
 
 
 
-class Controller{
+abstract class Controller{
 
 
     public function loadModel($model){

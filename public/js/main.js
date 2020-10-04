@@ -1,18 +1,3 @@
-//New Message Button
-// $(".new-message-anchor").on("click", function () {
-//     let displayValue = $("#new-message-box").css("display");
-//     if (displayValue == "none") {
-//         $("#new-message-box").css("display", "inline");
-//     } else {
-
-//         $("#new-message-box").css("display", "none");
-//     }
-
-
-
-// });
-
-
 function instantSearch(searchElement) {
     $.ajax({
         type: 'POST',

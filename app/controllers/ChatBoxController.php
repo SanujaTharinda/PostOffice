@@ -34,8 +34,8 @@ class ChatBoxController extends Controller{
         $content = $_POST['content'];
         $receiver = $_POST['receiver'];
         if($sender == $receiver){
-            echo "Message Not Sent...";
-            return;
+            echo "Please Enter A Valid Username";
+          
         }else{
             $this->chatModel->sendMessage($sender,$receiver, $content);
             echo "Message Sent Successfully...";
@@ -47,6 +47,7 @@ class ChatBoxController extends Controller{
         $username = $_POST['name'];
         $list = $this->userModel->getUsersList($username);
         echo json_encode($list);
+       
 
 
     }

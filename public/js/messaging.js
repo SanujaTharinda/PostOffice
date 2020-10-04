@@ -1,3 +1,7 @@
+let selectedChat = "default";
+
+
+
 //Open and close message box
 $("#message-button").on("click", function () {
   if ($(".chat-box").hasClass("chat-box-shown")) {
@@ -5,11 +9,23 @@ $("#message-button").on("click", function () {
     setTimeout(function () {
       $(".chat-container").css("z-index", -1);
     }, 300);
+    unselectChat("chat-" + selectedChat);
+    clearChatMessages();
+    selectedChat = "default";
+
   } else {
     $(".chat-box").addClass("chat-box-shown");
     $(".chat-container").css("z-index", 1);
   }
 });
+
+
+setInterval(function () {
+  getChats();
+  if (selectedChat != "default") {
+    selectChat("chat-" + selectedChat);
+  }
+}, 10000);
 
 //New Chat
 
@@ -19,7 +35,14 @@ $("#new-message-icon").on("click", function () {
 
 $("#cancel-button").on("click", function () {
   $("#new-message-box").css("display", "none");
+  clearNewChatBox();
 });
+
+function clearNewChatBox() {
+  document.getElementById("message-status").innerHTML = "";
+  document.getElementById("to-input").value = "";
+  document.getElementById("message-body-text-area").value = "";
+}
 
 function listUsers(username) {
   $.ajax({
@@ -29,6 +52,7 @@ function listUsers(username) {
     },
     url: "http://localhost/PostOffice/ChatBoxController/getUsers",
     success: function (data) {
+      console.log(data);
       updateListUsers(JSON.parse(data));
     },
   });
@@ -72,10 +96,20 @@ function sendMessageToNewChat() {
     },
     url: "http://localhost/PostOffice/ChatBoxController/sendReply",
     success: function (data) {
-      console.log(data);
+      updateMessageStatus(data);
       getChats();
+      clearChatMessages();
     },
   });
+}
+
+function clearChatMessages() {
+  document.getElementById("chat-messages").innerHTML = "";
+}
+
+function updateMessageStatus(message) {
+  console.log(message);
+  document.getElementById("message-status").innerHTML = message;
 }
 
 //Reply Icon
@@ -149,7 +183,7 @@ function displayChats(data) {
   }
 }
 
-let selectedChat = "default";
+
 
 function unselectChat(chat) {
   if (selectedChat != "default") {
@@ -169,7 +203,11 @@ function chatClick(chatId) {
   selectChat(chatId);
   chatId = chatId.replace("chat-", "");
   selectedChat = chatId;
+  getMessagesFromSelectedChat(chatId);
 
+}
+
+function getMessagesFromSelectedChat(chatId) {
   $.ajax({
     type: "POST",
     data: {
@@ -208,6 +246,19 @@ function updateMessagesScroll() {
   var element = document.getElementById("chat-messages");
   element.scrollTop = element.scrollHeight;
 }
+
+
+//Update Messages from time to time
+
+setInterval(updateNewMessages, 5000);
+
+function updateNewMessages() {
+
+}
+
+
+
+
 
 function checkReplyContent(text) {
   let withoutSpace = text.trim();

@@ -53,7 +53,4 @@ define("TB_MESSAGES", "messages");
 
 
 
-function getRootURL(){
-    return URLROOT;
-}
 
