@@ -19,7 +19,7 @@
                                 </button>
 
                                 <a class="navbar-brand" href="#">
-                                    <img src="<?php echo PUBLICROOT; ?>img/s.png" alt="logo">
+                                    <img src="<?php echo PUBLICROOT; ?>img/navbarLogo.png" alt="logo">
                                 </a>
 
                             </div>
