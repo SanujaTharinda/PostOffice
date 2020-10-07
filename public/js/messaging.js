@@ -1,8 +1,7 @@
-let selectedChat = "default";
+const defaultChat = "default";
+let selectedChat = defaultChat;
 
-
-
-//Open and close message box
+/* CHAT BOX OPEN AND CLOSE */
 $("#message-button").on("click", function () {
   if ($(".chat-box").hasClass("chat-box-shown")) {
     $(".chat-box").removeClass("chat-box-shown");
@@ -11,7 +10,8 @@ $("#message-button").on("click", function () {
     }, 300);
     unselectChat("chat-" + selectedChat);
     clearChatMessages();
-    selectedChat = "default";
+    hideReplyTextArea();
+    selectedChat = defaultChat;
 
   } else {
     $(".chat-box").addClass("chat-box-shown");
@@ -19,15 +19,11 @@ $("#message-button").on("click", function () {
   }
 });
 
+function hideReplyTextArea() {
+  document.getElementById("reply-box").style.display = "none";
+}
 
-setInterval(function () {
-  getChats();
-  if (selectedChat != "default") {
-    selectChat("chat-" + selectedChat);
-  }
-}, 10000);
-
-//New Chat
+/* NEW CHAT */
 
 $("#new-message-icon").on("click", function () {
   $("#new-message-box").css("display", "inline-block");
@@ -108,16 +104,15 @@ function clearChatMessages() {
 }
 
 function updateMessageStatus(message) {
-  console.log(message);
   document.getElementById("message-status").innerHTML = message;
 }
 
-//Reply Icon
+//Send Reply on Reply Icon Click...
 $("#reply-send").on("click", function () {
   sendReply($("#reply-area").val());
 });
 
-//Send Reply on Enter Press..
+//Send Reply on Enter Press...
 
 $("#reply-area").keypress(function (e) {
   if (e.which == 13) {
@@ -125,7 +120,9 @@ $("#reply-area").keypress(function (e) {
   }
 });
 
-//Display Chats...
+/* CHATS */
+
+//Display chats...
 $(document).ready(getChats);
 
 function getChats() {
@@ -247,18 +244,7 @@ function updateMessagesScroll() {
   element.scrollTop = element.scrollHeight;
 }
 
-
-//Update Messages from time to time
-
-setInterval(updateNewMessages, 5000);
-
-function updateNewMessages() {
-
-}
-
-
-
-
+//Chat Reply...
 
 function checkReplyContent(text) {
   let withoutSpace = text.trim();
@@ -269,7 +255,6 @@ function checkReplyContent(text) {
   }
 }
 
-//Send Reply
 
 function sendReply(message) {
   $.ajax({
