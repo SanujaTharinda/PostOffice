@@ -10,27 +10,27 @@
         <!--font awesome-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-        <!--bootstrap CSS-->
-        <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/Bootstrap/bootstrap.min.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!--Animate CSS-->
-        <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/animate/animate.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" integrity="sha512-4e743y/yh7ffjixFn2DBKvAA0j02JNn0iQ/bIq6usesbp6TRPcZFW0XHnwfSnpTtsTmMGh0UmvbXY26aJfIb0Q==" crossorigin="anonymous" />
         
+        <!-- Font Awesome -->
+
+        <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
+
         <!--style CSS-->
         <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/style.css">
 
         <!-- responsive CSS -->
         <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/responsive.css">
-
         
-
-         <!-- CSS Chat Box Style Sheet -->
-    <link rel="stylesheet" href="<?php echo PUBLICROOT?>css/chat-box-styles.css"/>
+        <!-- CSS Chat Box Style Sheet -->
+        <link rel="stylesheet" href="<?php echo PUBLICROOT?>css/chat-box-styles.css"/>
     
 
-    <!-- Font Awesome -->
-
-    <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
+        
 
 
     </head>
