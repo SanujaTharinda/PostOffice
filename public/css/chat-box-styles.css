@@ -243,6 +243,11 @@ body {
     background-color: #ff414d;
 }
 
+
+.chat-new {
+    background-color: brown;
+}
+
 .chat:hover {
     background-color: rgb(243, 24, 24);
 }

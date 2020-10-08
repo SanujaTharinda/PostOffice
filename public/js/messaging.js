@@ -1,5 +1,6 @@
 const defaultChat = "default";
 let selectedChat = defaultChat;
+const inboxChats = new Set();
 
 /* CHAT BOX OPEN AND CLOSE */
 $("#message-button").on("click", function () {
@@ -12,7 +13,6 @@ $("#message-button").on("click", function () {
     clearChatMessages();
     hideReplyTextArea();
     selectedChat = defaultChat;
-
   } else {
     $(".chat-box").addClass("chat-box-shown");
     $(".chat-container").css("z-index", 1);
@@ -126,26 +126,6 @@ $("#reply-area").keypress(function (e) {
 
 /* CHATS */
 
-
-//Refresh chats...
-
-
-setInterval(refreshChats, 3000);
-
-
-function refreshChats() {
-  getChats();
-  if (selectedChat != defaultChat) {
-    let chatId = "chat-" + selectedChat;
-    document.getElementById(chatId).classList.remove("chat-active");
-    console.log($("#" + chatId));
-    document.getElementById(chatId).classList.add("chat-active");
-    console.log($("#" + chatId));
-    getMessagesFromSelectedChat(selectedChat);
-  }
-
-}
-
 //Display chats...
 $(document).ready(getChats);
 
@@ -182,6 +162,7 @@ function displayChats(data) {
   for (interact of data) {
     if ("sender_name" in interact) {
       var interactName = interact["sender_name"];
+      inboxChats.add(interactName);
     } else {
       var interactName = interact["reciever_name"];
     }
@@ -203,8 +184,6 @@ function displayChats(data) {
   }
 }
 
-
-
 function unselectChat(chat) {
   if (selectedChat != "default") {
     document.getElementById(chat).classList.remove("chat-active");
@@ -215,7 +194,15 @@ function selectChat(chat) {
   document.getElementById(chat).classList.add("chat-active");
 }
 
+function markChatAsRead(chatId) {
+  let chat = document.getElementById(chatId);
+  if (chat.classList.contains("chat-new")) {
+    chat.classList.remove("chat-new");
+  }
+}
+
 function chatClick(chatId) {
+  markChatAsRead(chatId);
   showReplyTextArea();
   if (selectedChat != defaultChat) {
     unselectChat("chat-" + selectedChat);
@@ -224,7 +211,6 @@ function chatClick(chatId) {
   chatId = chatId.replace("chat-", "");
   selectedChat = chatId;
   getMessagesFromSelectedChat(chatId);
-
 }
 
 function getMessagesFromSelectedChat(chatId) {
@@ -267,6 +253,52 @@ function updateMessagesScroll() {
   element.scrollTop = element.scrollHeight;
 }
 
+//Update New Chats...
+
+setInterval(getNewChats, 5000);
+
+
+function getNewChats() {
+
+  $.ajax({
+    type: "GET",
+    data: {},
+    url: "http://localhost/PostOffice/ChatBoxController/loadChats",
+    success: function (data) {
+      displayNewChats(JSON.parse(data));
+    },
+  });
+}
+
+function displayNewChats(chats) {
+  chats.pop();
+  let received = chats.pop();
+  let newChats = new Set();
+  for (element of received) {
+    if (!inboxChats.has(element["sender_name"])) {
+      inboxChats.add(element["sender_name"]);
+      newChats.add(element["sender_name"]);
+    }
+  }
+
+  for (name of newChats) {
+    let id = "chat-" + name;
+    let chat = document.createElement("div");
+    chat.innerHTML = "<p>" + name + "</p>";
+    chat.classList.add("chat", "chat-new");
+    chat.setAttribute("id", id);
+    chat.addEventListener("click", function () {
+      chatClick(id);
+    });
+    let chats = document.getElementById("messages-tab");
+    chats.prepend(chat);
+  }
+
+
+
+
+}
+
 //Chat Reply...
 
 function checkReplyContent(text) {
@@ -277,7 +309,6 @@ function checkReplyContent(text) {
     disappearSendIcon();
   }
 }
-
 
 function sendReply(message) {
   $.ajax({
