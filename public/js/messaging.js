@@ -23,6 +23,10 @@ function hideReplyTextArea() {
   document.getElementById("reply-box").style.display = "none";
 }
 
+function showReplyTextArea() {
+  document.getElementById("reply-box").style.display = "inline-block";
+}
+
 /* NEW CHAT */
 
 $("#new-message-icon").on("click", function () {
@@ -122,11 +126,30 @@ $("#reply-area").keypress(function (e) {
 
 /* CHATS */
 
+
+//Refresh chats...
+
+
+setInterval(refreshChats, 3000);
+
+
+function refreshChats() {
+  getChats();
+  if (selectedChat != defaultChat) {
+    let chatId = "chat-" + selectedChat;
+    document.getElementById(chatId).classList.remove("chat-active");
+    console.log($("#" + chatId));
+    document.getElementById(chatId).classList.add("chat-active");
+    console.log($("#" + chatId));
+    getMessagesFromSelectedChat(selectedChat);
+  }
+
+}
+
 //Display chats...
 $(document).ready(getChats);
 
 function getChats() {
-  document.getElementById("reply-box").setAttribute("display", "inline-block");
   $.ajax({
     type: "GET",
     data: {},
@@ -184,19 +207,19 @@ function displayChats(data) {
 
 function unselectChat(chat) {
   if (selectedChat != "default") {
-    console.log("Unselecting...");
     document.getElementById(chat).classList.remove("chat-active");
   }
 }
 
 function selectChat(chat) {
-  console.log("Selecting...");
   document.getElementById(chat).classList.add("chat-active");
 }
 
 function chatClick(chatId) {
-  document.getElementById("reply-box").style.display = "inline-block";
-  unselectChat("chat-" + selectedChat);
+  showReplyTextArea();
+  if (selectedChat != defaultChat) {
+    unselectChat("chat-" + selectedChat);
+  }
   selectChat(chatId);
   chatId = chatId.replace("chat-", "");
   selectedChat = chatId;
