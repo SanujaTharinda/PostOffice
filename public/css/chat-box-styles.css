@@ -245,7 +245,11 @@ body {
 
 
 .chat-new {
-    background-color: brown;
+    background-color: #d7385e;
+}
+
+.chat-new-messages{
+    background-color: #d7385e;
 }
 
 .chat:hover {

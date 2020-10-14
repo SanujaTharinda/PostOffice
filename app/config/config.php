@@ -49,6 +49,8 @@ define("TB_salary", 'salary_details');
 define("TB_USERLOG", 'user_login');
 define("TB_SYSTEM_LOG", 'system_log');
 define("TB_MESSAGES", "messages");
+define("TB_INBOX_CHATS", "inbox");
+define("TB_CHATS", "chats");
 
 
 

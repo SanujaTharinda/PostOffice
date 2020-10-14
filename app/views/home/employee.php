@@ -2,7 +2,7 @@
 <html>
     <head>
 
-        <title>Main User Homepage</title>
+        <title>Employee User Homepage</title>
         
         <!--google fonts-->
         <link rel="stylesheet" href="https://fonts.google.com/specimen/Roboto+Condensed?selection.family=Roboto+Condensed:300,300i,400,400i,700,700i">

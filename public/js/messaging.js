@@ -1,6 +1,11 @@
 const defaultChat = "default";
 let selectedChat = defaultChat;
 const inboxChats = new Set();
+const sentChats = new Set();
+const messagesCount = new Map();
+let numberOfNewChats = 0;
+let numberOfNewMessagesChats = 0; 
+
 
 /* CHAT BOX OPEN AND CLOSE */
 $("#message-button").on("click", function () {
@@ -16,6 +21,9 @@ $("#message-button").on("click", function () {
   } else {
     $(".chat-box").addClass("chat-box-shown");
     $(".chat-container").css("z-index", 1);
+    numberOfNewChats = 0;
+    let button = document.getElementById("message-button");
+    button.style.color = "red";
   }
 });
 
@@ -52,7 +60,6 @@ function listUsers(username) {
     },
     url: "http://localhost/PostOffice/ChatBoxController/getUsers",
     success: function (data) {
-      console.log(data);
       updateListUsers(JSON.parse(data));
     },
   });
@@ -90,6 +97,7 @@ function sendMessageToNewChat() {
   let to = document.getElementById("to-input").value;
   $.ajax({
     type: "POST",
+    async:false,
     data: {
       receiver: to,
       content: message,
@@ -99,6 +107,23 @@ function sendMessageToNewChat() {
       updateMessageStatus(data);
       getChats();
       clearChatMessages();
+      
+    },
+  });
+  recordChat(to);
+  sentChats.add(to);
+  inboxChats.add(to);
+  
+}
+
+function recordChat(name){
+  $.ajax({
+    type: "POST",
+    data: {
+      receiver: name
+    },
+    url: "http://localhost/PostOffice/ChatBoxController/recordChat",
+    success: function (data) {
     },
   });
 }
@@ -182,7 +207,53 @@ function displayChats(data) {
     });
     chats.appendChild(chat);
   }
+
+  findUnrecordedChats();
 }
+
+
+function findUnrecordedChats(){
+
+  var myArray = [...inboxChats];
+  if(myArray.length > 0){
+    $.ajax({
+      type: "POST",
+      data: {
+        inbox: myArray
+      },
+    
+      url: "http://localhost/PostOffice/ChatBoxController/getInboxChats",
+      success: function (data) {
+        if(!(data == null && data == undefined)){
+          displayNewUnrecordedChats(JSON.parse(data));
+        }
+        
+      },
+    });
+  
+  }
+ 
+
+}
+
+
+function displayNewUnrecordedChats(chats){
+  for (name of chats) {
+    let id = "chat-" + name;
+    let chat = document.getElementById(id);
+    chat.classList.add("chat-new");
+    chat.remove();
+    let chats = document.getElementById("messages-tab");
+    chats.prepend(chat);
+  }
+  notifyNewChats(chats.length)
+
+}
+
+function notifyNewChats(numberOfChats){
+  numberOfNewChats = numberOfNewChats + numberOfChats;
+}
+
 
 function unselectChat(chat) {
   if (selectedChat != "default") {
@@ -198,7 +269,50 @@ function markChatAsRead(chatId) {
   let chat = document.getElementById(chatId);
   if (chat.classList.contains("chat-new")) {
     chat.classList.remove("chat-new");
+    numberOfNewChats = numberOfNewChats - 1;
+    recordNewInboxChat(chatId);
+    recordMessagesAsRead(chatId.replace("chat-", ""));
   }
+
+  if(chat.classList.contains("chat-new-messages")){
+    chat.classList.remove("chat-new-messages");
+    recordMessagesAsRead(chatId.replace("chat-", ""));
+  }
+}
+
+function recordMessagesAsRead(chatName){
+
+  $.ajax({
+    type: "POST",
+    data: {
+      sender: chatName
+    },
+    url: "http://localhost/PostOffice/ChatBoxController/recordMessagesAsRead",
+    success: function (data) {
+    },
+  });
+
+
+
+
+}
+
+
+
+
+function recordNewInboxChat(chatId){
+  let name = chatId.replace("chat-", "");
+  $.ajax({
+    type: "POST",
+    data: {
+      chatName: name
+    },
+    url: "http://localhost/PostOffice/ChatBoxController/recordChatName",
+    success: function (data) {
+    },
+  });
+
+
 }
 
 function chatClick(chatId) {
@@ -255,17 +369,85 @@ function updateMessagesScroll() {
 
 //Update New Chats...
 
-setInterval(getNewChats, 5000);
+$(document).ready(setInterval(function(){
+  getNewChats();
+  getNewMessagesCount();
+}, 5000));
+
+function getNewMessagesCount(){
+  let newMessages = 0;
+  for(name of inboxChats){
+    let lastId = getLastChatId(name);
+    let lastRecordedId = getLastRecordedChatId(name);
+    if(lastId > lastRecordedId){
+      newMessages = newMessages + 1;
+      let chat = document.getElementById("chat-" + name);
+      chat.classList.add("chat-new-messages");
+    }
+  }
+  notifyNewMessages(newMessages);
+}
+
+function notifyNewMessages(messages){
+   numberOfNewMessagesChats = messages;
+}
+
+function getLastRecordedChatId(name){
+  window.lastRecordedId = 0;
+  $.ajax({
+    type: "POST",
+    async:false,
+    data: {
+      sender: name
+    },
+    url: "http://localhost/PostOffice/ChatBoxController/getLastRecordedChatId",
+    success: function (data) {
+      if(data != "[]"){
+        window.lastRecordedId = Object.values(JSON.parse(data).pop()).pop();
+      }
+    },
+  });
+
+  return window.lastRecordedId;
+  
+
+
+}
+
+
+function getLastChatId(name){
+  
+
+  $.ajax({
+    type: "POST",
+    async:false,
+    data: {
+      sender: name
+    },
+    url: "http://localhost/PostOffice/ChatBoxController/getLastChatId",
+    success: function (data) {
+      window.lastId = Object.values(JSON.parse(data).pop()).pop();
+      
+    },
+  });
+
+  return window.lastId;
+
+}
 
 
 function getNewChats() {
 
   $.ajax({
     type: "GET",
+    async:false,
     data: {},
     url: "http://localhost/PostOffice/ChatBoxController/loadChats",
     success: function (data) {
-      displayNewChats(JSON.parse(data));
+      if(data != "[]"){
+        displayNewChats(JSON.parse(data));
+      }
+      
     },
   });
 }
@@ -275,12 +457,18 @@ function displayNewChats(chats) {
   let received = chats.pop();
   let newChats = new Set();
   for (element of received) {
-    if (!inboxChats.has(element["sender_name"])) {
+    if (!inboxChats.has(element["sender_name"]) && !sentChats.has(element["sender_name"])) {
+      console.log("Adding new Chat from " + element);
       inboxChats.add(element["sender_name"]);
       newChats.add(element["sender_name"]);
     }
   }
 
+  prependNewChats(newChats);
+
+}
+
+function prependNewChats(newChats){
   for (name of newChats) {
     let id = "chat-" + name;
     let chat = document.createElement("div");
@@ -294,10 +482,17 @@ function displayNewChats(chats) {
     chats.prepend(chat);
   }
 
-
-
-
+  notifyNewChats(newChats.size);
 }
+
+//Update Currenctly Selected Chat
+
+$(document).ready(setInterval(function(){
+  if(selectedChat != defaultChat){
+    getMessagesFromSelectedChat(selectedChat);
+  }
+  
+}, 100));
 
 //Chat Reply...
 
@@ -346,3 +541,14 @@ function appearSendIcon() {
 function disappearSendIcon() {
   document.getElementById("reply-send").style.display = "none";
 }
+
+
+//Notify New Messages or Chats
+
+setInterval(function(){
+  if(numberOfNewChats > 0 || numberOfNewMessagesChats > 0){
+    console.log("New Messages Here look...");
+    let button = document.getElementById("message-button");
+    button.style.color = "blue";
+  }
+}, 6000);

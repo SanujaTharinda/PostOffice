@@ -116,29 +116,12 @@
                     <div id="reply-box">
                         <textarea name="" oninput= "checkReplyContent(this.value)" placeholder="Your Message..." id="reply-area"></textarea>
 
-
-
                     </div>
                     <div id="reply-send">
                         <i class="far fa-paper-plane"></i>
                     </div>
-
-
-
-
-
                 </div>
-
-
-
             </div>
-
-
-
-
-
-
-
         </div>
     </div>
 
