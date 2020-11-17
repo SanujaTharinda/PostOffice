@@ -12,6 +12,12 @@ define("URLROOT", "http://localhost/PostOffice/");
 define("PUBLICROOT", URLROOT."public/");
 define("SITENAME", "PostOffice");
 
+//Locations
+
+define("CONTROLLERS_LOCATION", "../app/controllers/");
+define("MODELS_LOCATION", "../app/models/");
+define("VIEWS_LOCATION", "../app/views/");
+
 
 // Login 
 

@@ -1,6 +1,5 @@
 <?php
 
-
 class Core{
     protected $currentController;
     protected $currentMethod;
@@ -28,7 +27,7 @@ class Core{
 
     private function setController(){
         $fileName = ucwords($this->urlArray[0]);
-        $controllersLocation = "../app/controllers/";
+        $controllersLocation = CONTROLLERS_LOCATION;
         $fileFullName = $controllersLocation.$fileName.".php";
 
 
@@ -60,7 +59,7 @@ class Core{
         
     }
 
-    public function getUrl(){
+    private function getUrl(){
         if(isset($_GET['url'])){
             //Triming the unnecessary / s.
             $url = rtrim($_GET['url'], '/');
