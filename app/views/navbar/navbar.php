@@ -1,4 +1,4 @@
-<?php require_once APPROOT."/views/chat-box/chat-box.php" ?>
+
 <header>
 
                 <nav class="navbar top-nav navbar-fixed-top" role="navigation">

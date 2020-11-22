@@ -1,16 +1,14 @@
 <?php
 
-require_once APPROOT .'/models/User.php'; 
+require_once APPROOT .'/models/UsersModel.php'; 
 require_once APPROOT .'/helpers/url_helper.php'; 
 
 class LoginController extends Controller{
-    private $userModel;
+    private $usersModel;
 
 
     public function __construct(){
-        
-        $this->userModel = new User();
-
+        $this->usersModel = $this->loadModel("UsersModel");
     } 
 
     public function index(){
@@ -22,8 +20,13 @@ class LoginController extends Controller{
         $username = $_POST['email'];
         $password = $_POST['password'];
 
-        $isValid = $this->userModel->isUserValid($username, $password);
-        $userType = strtolower($this->userModel->getUserType($username));
+        $isValid = $this->usersModel->isUserValid($username, $password);
+
+      
+
+
+
+        $userType = strtolower($this->usersModel->getUserType($username));
         session_start();
 
         
@@ -42,28 +45,6 @@ class LoginController extends Controller{
             
         }
 
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

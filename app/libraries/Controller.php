@@ -4,7 +4,7 @@ abstract class Controller{
 
     public function loadModel($model){
         require_once MODELS_LOCATION . $model . ".php";
-        return new $model();
+        return new $model(Database::getDatabase());
     }
 
     public function view($view, $data = []){
