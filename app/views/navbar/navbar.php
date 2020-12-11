@@ -41,13 +41,7 @@
                                         </div>
                                     </li>
 
-                                    
-
-
-                                    <li id = "message-button"><button >Message</button></li>
                                     <li><a class="btn btn-logout" href="<?php echo LOGOUT_CLICK;?>">Logout</a></li>
-
-                                    
                                 </ul>
                             </div>
 

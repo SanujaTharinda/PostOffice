@@ -47,20 +47,8 @@
                             <div class="container-fluid"> 
                                 <div class="row wow fadeInUp " data-wow-duration=".7s" data-wow-delay=".5s">
 
-                                <div class="col-md-4">
-                                    <div class="Item">
-                                        <div class="Item-icon">
-                                            <i class="fa fa-address-book fa-4x"></i>
-                                        </div>
-                                        
-                                        <div class="Item-title">
-                                            <a class="btn btn-lg btn-general btn-7" href=<?php echo EMPLOYEE_USER_DETAILS_CLICK ?> role="button">Employee User Details</a></h3>
-                                        </div>
 
-                                    
-                                    </div>
-                                </div>
-                                
+
                                 <div class="col-md-4">
                                     <div class="Item">
                                         <div class="Item-icon">
@@ -114,6 +102,20 @@
                                         </div>
 
                                         
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="Item">
+                                        <div class="Item-icon">
+                                            <i class="fa fa-address-book fa-4x"></i>
+                                        </div>
+                                        
+                                        <div class="Item-title">
+                                            <a class="btn btn-lg btn-general btn-7" href=<?php echo EMPLOYEE_USER_DETAILS_CLICK ?> role="button">Employee User Details</a></h3>
+                                        </div>
+
+                                    
                                     </div>
                                 </div>
                                 
