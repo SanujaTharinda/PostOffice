@@ -31,7 +31,6 @@ class DatabaseMYSQL implements RelationalDatabase{
     public function bind($parameter, $value){
         $type = gettype($value);
         $type = $this->mapToPDOType($type);
-        
         $this->statement->bindValue($parameter, $value, $type);
         
     }

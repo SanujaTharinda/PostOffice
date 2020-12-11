@@ -14,9 +14,9 @@ define("SITENAME", "PostOffice");
 
 //Locations
 
-define("CONTROLLERS_LOCATION", "../app/controllers/");
-define("MODELS_LOCATION", "../app/models/");
-define("VIEWS_LOCATION", "../app/views/");
+define("CONTROLLERS_LOCATION", APPROOT."/controllers/");
+define("MODELS_LOCATION", APPROOT."/models/");
+define("VIEWS_LOCATION", APPROOT."/views/");
 
 
 // Login 
@@ -34,10 +34,34 @@ define("LOGOUT_CLICK", URLROOT."NavbarController/logout");
 
 define("MINOR_STAFF_DETAILS_CLICK", URLROOT."MinorStaffDetailsController/minorStaffDetails");
 
+// MainUserDetails
+
+define("MAIN_USER_DETAILS_CLICK", URLROOT."MainUserDetailsController/mainUserDetails");
+define("MAIN_USER_DETAILS_ADD_MAINUSER_CLICK", URLROOT."MainUserDetailsController/addMainUser");
+
+
+// EmployeeUserDetails
+
+define("EMPLOYEE_USER_DETAILS_CLICK", URLROOT."EmployeeUserDetailsController/employeeUserDetails");
+define("EMPLOYEE_USER_DETAILS_ADD_EMPLOYEEUSER_CLICK", URLROOT."EmployeeUserDetailsController/addEmployeeUser");
+
+
+//salary
+
+define("SALARY_CLICK",URLROOT."SalaryController/salaryDetails");
+
 // MinorStaffDetails
 
 define("MINOR_STAFF_DETAILS_SEARCH_CLICK", URLROOT."MinorStaffDetailsController/search");
 define("MINOR_STAFF_DETAILS_ADD_EMPLOYEE_CLICK",URLROOT."MinorStaffDetailsController/addEmployeePage" );
+
+define("LEAVE_MANAGEMENT_CLICK_ADMIN", URLROOT."LeaveManagementController/adminLeaveManagementDashboard");
+
+
+//leave 
+define("ADD_LEAVE_TYPE_CLICK", URLROOT."LeaveManagementController/addLeaveType");
+define("ADD_LEAVE_CLICK", URLROOT."LeaveManagementController/addLeave");
+define("LEAVE_TYPE_CLICK", URLROOT."LeaveManagementController/leaveTypePanel");
 
 
 //Attendance
@@ -57,8 +81,5 @@ define("TB_SYSTEM_LOG", 'system_log');
 define("TB_MESSAGES", "messages");
 define("TB_INBOX_CHATS", "inbox");
 define("TB_CHATS", "chats");
-
-
-
-
-
+define("TB_LEAVE_DETAILS","leave_details");
+define("TB_LEAVE_TYPE","leave_type");

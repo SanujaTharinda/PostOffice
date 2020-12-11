@@ -61,7 +61,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <a class="btn btn-lg btn-general btn-1" href="index.php" role="button">Main User Details</a>
+                                            <a class="btn btn-lg btn-general btn-1" href=<?php echo MAIN_USER_DETAILS_CLICK ?> role="button">Main User Details</a>
                                         </div>
 
                                     
@@ -75,7 +75,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <a class="btn btn-lg btn-general btn-2" href="index.php" role="button">Employee User Details</a></h3>
+                                            <a class="btn btn-lg btn-general btn-2" href=<?php echo EMPLOYEE_USER_DETAILS_CLICK ?> role="button">Employee User Details</a></h3>
                                         </div>
 
                                     
@@ -89,7 +89,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-3" href=<?php echo MINOR_STAFF_DETAILS_CLICK ?>>Minor Staff Details</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-3" href=<?php echo MINOR_STAFF_DETAILS_CLICK ?> role="button">Minor Staff Details</a></h3>
                                         </div>
 
                                         
@@ -103,7 +103,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-4" href="<?php echo ATTENDANCE_CLICK;?>" role="button">Attendance</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-4" href=<?php echo ATTENDANCE_CLICK;?> role="button">Attendance</a></h3>
                                         </div>
 
                                         
@@ -117,7 +117,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-5" href="index.php" role="button">Duty Arrangement</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-5" href="<?php echo LEAVE_MANAGEMENT_CLICK_ADMIN;?>" role="button">Duty Arrangement</a></h3>
                                         </div>
 
                                         
@@ -131,7 +131,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-6" href="index.php" role="button">Salary Manangement</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-6" href=<?php echo SALARY_CLICK;?> role="button">Salary Manangement</a></h3>
                                         </div>
 
                                         

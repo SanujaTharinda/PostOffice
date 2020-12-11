@@ -59,7 +59,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-8" href="index.php" role="button">Minor Staff Details</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-8" href=<?php echo MINOR_STAFF_DETAILS_CLICK ?> role="button">Minor Staff Details</a></h3>
                                         </div>
 
                                         
@@ -73,7 +73,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-9" href="index.php" role="button">Attendance</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-9" href=<?php echo ATTENDANCE_CLICK;?> role="button">Attendance</a></h3>
                                         </div>
 
                                         
@@ -87,7 +87,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-10" href="index.php" role="button">Duty Arrangement</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-10" href=<?php echo SALARY_CLICK;?> role="button">Duty Arrangement</a></h3>
                                         </div>
 
                                         
@@ -101,7 +101,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-11" href="index.php" role="button">Salary Manangement</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-11" href=<?php echo SALARY_CLICK;?> role="button">Salary Manangement</a></h3>
                                         </div>
 
                                         

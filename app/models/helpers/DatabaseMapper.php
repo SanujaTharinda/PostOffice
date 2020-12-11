@@ -19,6 +19,7 @@ class DatabaseMapper implements Mapper{
 
 
     public function find($tableName, $columns, $key, $value){
+       // die($tableName);
         $columns = $this->getColumns($columns);
         $sql = "SELECT {$columns} FROM $tableName WHERE $key = :value";
         $this->database->query($sql);
@@ -38,11 +39,13 @@ class DatabaseMapper implements Mapper{
     }
 
     public function insert($tableName, $columns, $values){
-        $columns = $this->getColumns($columns);
-        $keys = $this->generateKeys($values);
-        $sql = "INSERT INTO $tableName ({$columns}) VALUES ({$keys})";
+        $arrayValues = array_values($values);
+        $arrayFields = array_keys($values);
+        $fields = $this->getColumns($arrayFields);
+        $keys = $this->generateKeys($arrayValues);
+        $sql = "INSERT INTO $tableName ({$fields}) VALUES ({$keys})";
         $this->database->query($sql);
-        $this->bind($values);
+        $this->bind($arrayValues);
         return $this->database->execute();
         
     }
@@ -58,6 +61,7 @@ class DatabaseMapper implements Mapper{
     public function update($tableName, $setters, $key, $value){
         $setters = $this->getSetters($setters);
         $sql = "UPDATE $tableName SET {$setters} WHERE $key =:value";
+      //  die($sql);
         $this->database->query($sql);
         $this->database->bind(':value', $value);
         return $this->database->execute();
@@ -84,7 +88,6 @@ class DatabaseMapper implements Mapper{
             $keys = $keys . ",:value{$i}";
         }
         return $keys;
-    
     }
     
     private function getColumns($columns){
@@ -93,9 +96,9 @@ class DatabaseMapper implements Mapper{
         }
         $columnsRequired = '';
         foreach ($columns as $column) {
-            $columnsRequired  = $columnsRequired . $column;
+            $columnsRequired  = $columnsRequired . $column . ',';
         }
-        return $columnsRequired;
+        return chop($columnsRequired,",");
     }
     
 }
