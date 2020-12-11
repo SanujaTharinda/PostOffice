@@ -19,39 +19,19 @@ class LeaveModel extends Model{
     }
 
     public function addLeave($data){
-        $addLeave= $this->databaseMapper->insert($this->leaveDetailsTable,[],$data);
-        if ($addLeave) {
-            return true;
-        }else {
-            return false;
-        }
+        return $this->databaseMapper->insert($this->leaveDetailsTable,$data);
     }
 
     public function addLeaveType($data){
-        $addLeaveType= $this->databaseMapper->insert($this->leaveTypeTable,[],$data);
-        if ($addLeaveType) {
-            return true;
-        }else {
-            return false;
-        }
+        return $this->databaseMapper->insert($this->leaveTypeTable,$data);
     }
 
     public function deleteLeave($id){
-        $deleteLeave=$this->databaseMapper->delete($this->leaveDetailsTable, 'id', $id);
-        if ($deleteLeave) {
-            return true;
-        }else {
-            return false;
-        }
+        return $this->databaseMapper->delete($this->leaveDetailsTable, 'id', $id);
     }
 
     public function deleteLeaveType($id){
-        $deleteLeaveType=$this->databaseMapper->delete($this->leaveTypeTable,'id',$id);
-        if ($deleteLeaveType) {
-            return true;
-        }else {
-            return false;
-        }
+        return $this->databaseMapper->delete($this->leaveTypeTable,'id',$id); 
     }
 
     public function updateLeaveStatus($id,$value){

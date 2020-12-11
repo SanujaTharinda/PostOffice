@@ -1,16 +1,14 @@
 <?php
 
-require_once APPROOT.'/models/DutyModel.php';
+
 require_once APPROOT .'/helpers/url_helper.php';
-
-
 
 class OtManagementController extends Controller{
       
     private $dutyModel;
 
     public function __construct(){
-        $this->dutyModel = $this->model('DutyModel');
+        $this->dutyModel = $this->loadModel('DutyModel');
     }
 
     public function otManagement(){

@@ -33,7 +33,7 @@ class SystemModel extends Model{
 
     private function insertDateToTheLog($date){
         return 
-            $this->databaseMapper->insert($this->systemLogTable, ['date'], [$date]);
+            $this->databaseMapper->insert($this->systemLogTable,['date' => $date]);
         
     }
 

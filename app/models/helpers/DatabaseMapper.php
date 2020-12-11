@@ -38,7 +38,7 @@ class DatabaseMapper implements Mapper{
         return $this->database->resultSet();  
     }
 
-    public function insert($tableName, $columns, $values){
+    public function insert($tableName,$values){
         $arrayValues = array_values($values);
         $arrayFields = array_keys($values);
         $fields = $this->getColumns($arrayFields);

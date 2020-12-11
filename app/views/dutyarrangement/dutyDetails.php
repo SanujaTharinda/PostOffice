@@ -84,7 +84,6 @@
         <script src="<?php echo PUBLICROOT;?>js/wow/wow.min.js"></script>
         <script src="<?php echo PUBLICROOT;?>js/owl-carousel/owl.carousel.min.js"></script>
         <script src="<?php echo PUBLICROOT;?>js/custom.js"></script>
-        <script src="<?php echo PUBLICROOT;?>js/messaging.js"></script>
         <script src="<?php echo PUBLICROOT;?>js/duty.js"></script>
             
     </body>

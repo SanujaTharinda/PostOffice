@@ -1,6 +1,4 @@
 <?php 
-
-
 class UsersModel extends Model{
     private $usersTable;
     private $mainUserTable;
@@ -58,11 +56,11 @@ class UsersModel extends Model{
     }
     
     public function addUser($data){
-        return $this->databaseMapper->insert($this->usersTable, [], $data);
+        return $this->databaseMapper->insert($this->usersTable, $data);
     }
     
     public function addMainUser($data){
-        return $this->databaseMapper->insert($this->mainUserTable, [], $data);
+        return $this->databaseMapper->insert($this->mainUserTable, $data);
     }
     
     public function deleteMainUser($email){
@@ -81,7 +79,7 @@ class UsersModel extends Model{
     }
 
     public function addEmployeeUser($data){
-        return $this->databaseMapper->insert($this->employeeUserTable, [], $data);
+        return $this->databaseMapper->insert($this->employeeUserTable,$data);
     }
 
     public function editEmployeeUser($data, $id){

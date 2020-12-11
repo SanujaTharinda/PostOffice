@@ -78,7 +78,7 @@
 
         <!-- Ain Krnna -->
 
-        <script src="<?php echo PUBLICROOT."/js/log.js" ?>"></script>
+        <script src="<?php echo PUBLICROOT."/js/log.js" ?>" type = 'module'></script>
 
     </body>
 </html>

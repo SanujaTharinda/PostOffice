@@ -1,21 +1,9 @@
-today = getTodayDate();
-updateSystemLog(today);
+import {getTodayDate} from './helpers/timeAndDate.js';
+console.log("Helloooo");
 
-
-function getTodayDate() {
-    var date = new Date();
-    let year = date.getFullYear();
-    let month = (date.getMonth() + 1).toString();
-    let day = date.getDate().toString();
-
-    if (day.length == 1) {
-        day = "0" + day;
-    }
-    if (month.length == 1) {
-        month = "0" + month;
-    }
-    return year + "." + month + "." + day;
-}
+const today = getTodayDate();
+console.log(today);
+document.ready(updateSystemLog(today));
 
 function updateSystemLog(today) {
     $.ajax({

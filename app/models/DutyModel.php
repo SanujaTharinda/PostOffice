@@ -34,51 +34,19 @@ class DutyModel extends Model{
     }
 
     public function addDuty($data){
-            
-            $insertToDutyTable=$this->databaseMapper->insert($this->dutyDetailsTable,[],$data);
-
-            if($insertToDutyTable){
-                return true;
-            }else{
-                return false;
-            }
-        
+            return $this->databaseMapper->insert($this->dutyDetailsTable,$data); 
     }
 
     public function addOt($data){
-
-        $insertToOtTable=$this->databaseMapper->insert($this->otDetailsTable,[],$data);
-
-        if($insertToOtTable){
-            return true;
-        }else{
-            return false;
-        }
-
+        return $this->databaseMapper->insert($this->otDetailsTable,$data);
     }
 
     public function updateDuty($data){
-        
-        $updateDutyDetails=$this->databaseMapper->update($this->dutyDetailsTable,$data,'id',$data['id']);
-
-        if($updateDutyDetails){
-            return true;
-        }else{
-            return false;
-        }
-        
+        return $this->databaseMapper->update($this->dutyDetailsTable,$data,'id',$data['id']);
     }
 
     public function deleteDuty($id){
-        
-        $removeDuty=$this->databaseMapper->delete($this->dutyDetailsTable,'id',$id);
-
-        if($removeDuty){
-            return true;
-        }else{
-            return false;
-        }
-
+        return $this->databaseMapper->delete($this->dutyDetailsTable,'id',$id);
     }
 
 }

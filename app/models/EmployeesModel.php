@@ -64,7 +64,7 @@ class EmployeesModel extends Model{
     }
 
     public function addEmployee($data){
-        return $this->databaseMapper->insert($this->minorStaffTable, [], $data);
+        return $this->databaseMapper->insert($this->minorStaffTable, $data);
     }
 
     public function findEmployeeById($id){
@@ -94,7 +94,7 @@ class EmployeesModel extends Model{
 
     public function markAttendance($list){
         for ($i=0; $i<sizeof($list); $i++){
-            $this->databaseMapper->insert($this->attendanceTable, [],$list[$i]);
+            $this->databaseMapper->insert($this->attendanceTable,$list[$i]);
         }
 
     }
