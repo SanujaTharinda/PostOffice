@@ -12,39 +12,31 @@ class LoginController extends Controller{
     } 
 
     public function index(){
+        session_start();
+        if(isset($_SESSION['username']))
+            redirect("LoginController/loggedIn");
         $this->view("login/loginPage", []);
     
+    }
+
+    public function loggedIn(){
+        $this->view("login/loggedIn", []);
     }
 
     public function validate(){
         $username = $_POST['email'];
         $password = $_POST['password'];
-
         $isValid = $this->usersModel->isUserValid($username, $password);
-
-      
-
-
-
         $userType = strtolower($this->usersModel->getUserType($username));
         session_start();
-
-        
-
-        if(isset($_SESSION['username'])){
+        $_SESSION['username'] = $username;
+        $_SESSION['usertype'] = $userType;
+        if(!$isValid or !isset($userType)){
+            session_destroy();
             redirect("LoginController");
-        }else{
-            $_SESSION['username'] = $username;
-            $_SESSION['usertype'] = $userType;
-            if(!$isValid or !isset($userType)){
-                redirect("LoginController");
-            }else{
-                redirect("HomeController/homePage/$userType");
-            }
-    
             
-        }
-
+        }else{
+            redirect("HomeController/homePage/$userType");
+        }   
     }
-
 }

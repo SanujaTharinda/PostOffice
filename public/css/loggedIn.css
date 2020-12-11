@@ -1,0 +1,28 @@
+body{
+    background-image: url("../img/loginPageCover.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+
+
+.loggedIn {  
+  width: 30%;
+  height: 10%;
+  background-color: whitesmoke;
+  margin: 14% auto;
+  border-radius: 0.5rem;
+  padding: 15px;
+   
+}
+
+.logout{
+    display: inline-block;
+    margin-left:120px;
+    margin-right: 15px;
+}
+
+.cancel{
+    display: inline-block;
+}
