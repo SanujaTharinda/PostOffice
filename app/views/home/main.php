@@ -84,7 +84,7 @@
                                         </div>
                                         
                                         <div class="Item-title">
-                                            <h3><a class="btn btn-lg btn-general btn-10" href="index.php" role="button">Duty Arrangement</a></h3>
+                                            <h3><a class="btn btn-lg btn-general btn-10" href=<?php echo DUTY_ARRANGEMENT_CLICK;?> role="button">Duty Arrangement</a></h3>
                                         </div>
 
                                         

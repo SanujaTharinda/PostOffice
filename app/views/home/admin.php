@@ -109,6 +109,20 @@
                                         
                                     </div>
                                 </div>
+
+                                <div class="col-md-4">
+                                    <div class="Item">
+                                        <div class="Item-icon">
+                                            <i class="fa fa-sitemap fa-4x"></i>
+                                        </div>
+                                        
+                                        <div class="Item-title">
+                                            <h3><a class="btn btn-lg btn-general btn-5" href="<?php echo DUTY_ARRANGEMENT_CLICK;?>" role="button">Duty Arrangment</a></h3>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
                                 
                                 <div class="col-md-4">
                                     <div class="Item">
