@@ -55,11 +55,11 @@ class LeaveManagementController extends Controller{
 
     public function submitLeave(){
         $data=[
-            'ename'=>$_POST['name'],
-            'etype'=>$_POST['employee_type'],
+            'employee_id'=>$_POST['name'],
+            'employee_type'=>$_POST['employee_type'],
             'leave_from'=>$_POST['leave_from'],
             'leave_to'=>$_POST['leave_to'],
-            'description'=>$_POST['leave_description']
+            'leave_description'=>$_POST['leave_description']
            
         ];
         $this->leaveModel->addLeave($data);
