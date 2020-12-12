@@ -35,7 +35,7 @@ function displayResults(data) {
 
                 button.addEventListener("click",function(){
                     var id=values[0];
-                    window.location.replace("http://localhost/PostOffice/LeaveManagementController/submitLeaveType/"+id);
+                    window.location.replace("http://localhost/PostOffice/LeaveManagementController/editLeavePage/"+id);
                 })
 
             }else if(j==numberOfColumns+1){

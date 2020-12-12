@@ -11,7 +11,12 @@
 	
 </head>
 <body class="overlay-scrollbar">
-	
+
+
+	<!-- <nav>
+		<?php require_once APPROOT.'/views/navbar/navbar.php'; ?>
+	</nav> -->
+
 	<div class="navbar">
 		<ul class="navbar-nav">
 			<li class="nav-item">
@@ -51,6 +56,25 @@
 			
 		</ul>
 	</div>
+	
+
+	<!-- <div class="addDutyBar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="dutyHeader">
+                            <h5>Attendence Dashboard</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="<?php echo URLROOT; ?>AttendanceController/markAttendance"><button class="addDutyBtn">Mark Attendance</button></a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="<?php echo URLROOT; ?>AttendanceController/showAttendance"><button class="addDutyBtn">View Attendance</button></a>
+                    </div>
+                </div>
+            </div>
+    </div> -->
 
 	<div class="wrapper">
 		<div class="row">

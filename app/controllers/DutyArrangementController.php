@@ -58,7 +58,7 @@ class DutyArrangementController extends Controller{
             $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
 
             
-            $data=[ 'id'=>$id,
+            $data=[ 'id'=>array_shift($id),
                 'name'=>trim($_POST['name']),
                 'start_time'=>trim($_POST['start_time']),
                 'end_time'=>trim($_POST['end_time']),
@@ -70,9 +70,9 @@ class DutyArrangementController extends Controller{
             
         }else{
 
-            $row=$this->dutyModel->getDutyById($id);
+            $row=$this->dutyModel->getDutyById(array_shift($id));
 
-            $data=[ 'id'=>$id,
+            $data=[ 'id'=>array_shift($id),
                 'name'=>$row->name,
                 'start_time'=>$row->start_time,
                 'end_time'=>$row->end_time,
@@ -86,7 +86,7 @@ class DutyArrangementController extends Controller{
 
     public function delete($id){
         if($_SERVER['REQUEST_METHOD']=='GET'){
-            if($this->dutyModel->deleteDuty($id)){
+            if($this->dutyModel->deleteDuty($id[0])){
                 redirect('DutyArrangementController/dutyArrangement');
             }
         }else{

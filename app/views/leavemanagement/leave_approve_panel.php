@@ -11,6 +11,29 @@
     
 </head>
 <body>
+      <nav class="navigationBar">
+      
+      <?php require_once(APPROOT."/views/navbar/navbar.php");?>
+
+      </nav>
+
+      <div class="addDutyBar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="dutyHeader">
+                            <h5>Leave Approve Panel</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-1.5">
+                        <a href="<?php echo ADD_LEAVE_CLICK;?>"><button class="addDutyBtn">Add Leave</button></a>
+                    </div>
+                    <div class="col-md-1.5">
+                        <a href="<?php echo LEAVE_TYPE_CLICK;?>"><button class="addDutyBtn">Leave Type</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>  
 
 	   <div class="content-table">
 	      <div class="content pb-0">
@@ -18,11 +41,6 @@
                <div class="row">
                   <div class="col-xl-12">
                      <div class="card">
-                        <div class="card-body">
-                           <h4 class="box-title">Leave Approve Panel </h4>
-      						   <h4 class="box_title_link"><a href="<?php echo ADD_LEAVE_CLICK;?>">Add Leave</a> </h4>		   
-      						   <h4 class="box_title_link"><a href="<?php echo LEAVE_TYPE_CLICK;?>">Leave Type</a> </h4>	   
-                        </div>
                         <div class="card-body--">
                            <div class="table-stats  ov-h">
                               <table class="table table-hover t">

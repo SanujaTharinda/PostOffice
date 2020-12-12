@@ -6,8 +6,7 @@
         
         <link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/animate/animate.css">
         <link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/owl-carousel/owl.theme.default.min.css">
-        
+        <link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/owl-carousel/owl.theme.default.min.css">     
         <link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/normalize.css">
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/font-awesome.min.css">
@@ -16,7 +15,6 @@
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/flag-icon.min.css">
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/cs-skin-elastic.css">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/dutyArrangement.css">
 
         

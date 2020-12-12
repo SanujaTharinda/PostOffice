@@ -27,26 +27,28 @@ class LeaveModel extends Model{
     }
 
     public function deleteLeave($id){
-        $deleteLeave=$this->databaseMapper->delete($this->leaveDetailsTable, 'id', $id);
-        if ($deleteLeave) {
-            return true;
-        }else {
-            return false;
-        }
+        return $this->databaseMapper->delete($this->leaveDetailsTable, 'id', $id);
+        
     }
 
+
     public function deleteLeaveType($id){
-        $deleteLeaveType=$this->databaseMapper->delete($this->leaveTypeTable,'id',$id);
-        if ($deleteLeaveType) {
-            return true;
-        }else {
-            return false;
-        }
+        return $this->databaseMapper->delete($this->leaveTypeTable,'id',$id);
     }
 
     public function updateLeaveStatus($id,$value){
         return $this->databaseMapper->update($this->leaveDetailsTable,leave_status,'id',$value);
 
+    }
+
+    public function getLeaveTypeById($id){
+        
+        $leaveTypeArray=$this->databaseMapper->find($this->leaveTypeTable,[],'id',$id);
+        return array_shift($leaveTypeArray);
+    }
+
+    public function editLeave($data){
+        return $this->databaseMapper->update($this->leaveTypeTable,$data,'id',$data['id']);
     }
 
 

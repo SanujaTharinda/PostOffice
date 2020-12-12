@@ -82,7 +82,7 @@ class LeaveManagementController extends Controller{
     
     public function deleteLeave($id){
         if($_SERVER['REQUEST_METHOD']=='GET'){
-            if($this->leaveModel->deleteLeaveType($id)){
+            if($this->leaveModel->deleteLeaveType($id[0])){
                 $this->view('leavemanagement/leave_type_panel');
             }
         }
@@ -95,6 +95,33 @@ class LeaveManagementController extends Controller{
         $id = $_POST['identity'];
         $value = $_POST['val'];
         $this->leaveModel->updateLeaveStatus($id,$value); 
+    }
+
+    public function editLeavePage($id){
+
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            
+            $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+
+            
+            $data=[ 'id'=>array_shift($id),
+                'leave_type'=>trim($_POST['leave_type']) ];
+
+            if($this->leaveModel->editLeave($data)){
+                redirect('LeaveManagementController/leaveTypePanel');
+            }
+            
+        }else{
+
+            $row=$this->leaveModel->getLeaveTypeById(array_shift($id));
+
+            $data=[ 'id'=>array_shift($id),
+                'leave_type'=>$row->leave_type ];
+
+            $this->view('leavemanagement/leave_type_edit',$data);
+
+        }
+    
     }
 
 }
