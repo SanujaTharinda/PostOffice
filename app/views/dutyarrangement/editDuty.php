@@ -21,7 +21,7 @@
 
 	<main>
 
-		<form action="<?php echo URLROOT;?>/DutyArrangementController/editDutyPage/<?php echo $data['id'];?>" method="post" class="userform" id="form"  >
+		<form  method="post" class="userform" id="form"  >
 
 					<div class="content-form pb-0">
 						<div class="animated fadeIn">
@@ -30,7 +30,7 @@
 								<div class="card">
 									<div class="card-header"><h2>Edit Duty<h2></div>
 									<div class="card-body card-block">
-									<form method="post">
+									<form method = "POST" action="<?php echo URLROOT;?>/DutyArrangementController/editDutyPage/<?php echo $data['id'];?>" >
 
                                             <input type="hidden" name="id" value="<?php echo $id?>">
 										
