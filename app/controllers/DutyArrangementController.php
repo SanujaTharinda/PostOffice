@@ -69,9 +69,7 @@ class DutyArrangementController extends Controller{
             }
             
         }else{
-
-            $row=$this->dutyModel->getDutyById($id);
-
+            $row=$this->dutyModel->getDutyById(array_shift($id));
             $data=[ 'id'=>$id,
                 'name'=>$row->name,
                 'start_time'=>$row->start_time,

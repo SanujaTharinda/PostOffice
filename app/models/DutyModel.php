@@ -25,12 +25,8 @@ class DutyModel extends Model{
     }
 
     public function getDutyById($id){
-        
         $dutyArray=$this->databaseMapper->find($this->dutyDetailsTable,[],'id',$id);
-        $dutyObject=array_shift($dutyArray);
-        
-        return $dutyObject;
-
+        return array_shift($dutyArray);
     }
 
     public function addDuty($data){
