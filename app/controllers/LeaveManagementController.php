@@ -1,6 +1,6 @@
 <?php
 
-//require_once APPROOT .'/models/Leave.php';
+require_once APPROOT .'/models/LeaveModel.php';
 require_once APPROOT .'/helpers/url_helper.php';
 
 class LeaveManagementController extends Controller{
@@ -55,7 +55,7 @@ class LeaveManagementController extends Controller{
 
     public function submitLeave(){
         $data=[
-            'employee_id'=>$_POST['name'],
+            'employee_name'=>$_POST['name'],
             'employee_type'=>$_POST['employee_type'],
             'leave_from'=>$_POST['leave_from'],
             'leave_to'=>$_POST['leave_to'],
@@ -67,17 +67,12 @@ class LeaveManagementController extends Controller{
     }
 
     public function submitLeaveType(){
-        if ($_SERVER['REQUEST_METHOD']=='POST') {
             $data=[
-                'ltype'=>$_POST['leave_type'],
+                'leave_type'=>$_POST['leave_type'],
                 ];
-/*                $data = $_POST['leave_type'];
-*/
+
                 $this->leaveModel->addLeaveType($data);
-                $this->view("leavemanagement/leave_type_panel");  
-        }else{
-            $this->view("leavemanagement/leave_type_add");
-        }          
+                $this->view("leavemanagement/leave_type_panel");         
     }
 
     public function deleteLeaveForm($id){
@@ -86,8 +81,14 @@ class LeaveManagementController extends Controller{
     }
     
     public function deleteLeave($id){
-        $this->leaveModel->deleteLeaveType($id);
-        $this->view('leavemanagement/leave_type_panel');
+        if($_SERVER['REQUEST_METHOD']=='GET'){
+            if($this->leaveModel->deleteLeaveType($id)){
+                $this->view('leavemanagement/leave_type_panel');
+            }
+        }
+
+        /*$this->leaveModel->deleteLeaveType($id);
+        $this->view('leavemanagement/leave_type_panel');*/
     }
 
     public function updateLeaveForm(){

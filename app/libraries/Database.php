@@ -7,7 +7,7 @@ class Database{
 
     private function __construct(){}
 
-    public function getDatabase(){
+    public static function getDatabase(){
         $database = self::$database;
         if(is_null($database)){
             $database = new DatabaseMYSQL();

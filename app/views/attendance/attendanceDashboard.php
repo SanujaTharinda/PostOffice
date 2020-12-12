@@ -7,8 +7,8 @@
 	<link rel="icon" type="image/png" href="#"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo PUBLICROOT."css/fontawesome-free/css/all.min.css"?>">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
 	<link rel="stylesheet" type="text/css" href="<?php echo PUBLICROOT."css/dashboard_style.css"?>">
+	
 </head>
 <body class="overlay-scrollbar">
 	
@@ -122,9 +122,7 @@
 	</div>
 
 	<script src="<?php echo PUBLICROOT."js/dashboard_index.js"?>"></script>
-
 	<script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
-	<?php echo PUBLICROOT."js/jquery-2.1.4.min.js" ?>
 	<script src="<?php echo PUBLICROOT."js/Chart.js"?>"></script>
 	<script type="text/javascript" src="<?php echo PUBLICROOT."js/dashboard_script.js"?>"></script>
 </body>
