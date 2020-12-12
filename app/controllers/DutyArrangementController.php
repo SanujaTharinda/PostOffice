@@ -52,7 +52,6 @@ class DutyArrangementController extends Controller{
     }
 
     public function editDutyPage($id){
-
         if($_SERVER['REQUEST_METHOD']=='POST'){
             
             $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
@@ -77,7 +76,6 @@ class DutyArrangementController extends Controller{
                 'start_time'=>$row->start_time,
                 'end_time'=>$row->end_time,
                 'duty'=>$row->duty ];
-
             $this->view('dutyArrangement/editDuty',$data);
 
         }
