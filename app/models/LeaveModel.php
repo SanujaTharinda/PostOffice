@@ -19,7 +19,8 @@ class LeaveModel extends Model{
     }
 
     public function addLeave($data){
-        return $this->databaseMapper->insert($this->leaveDetailsTable,$data);
+         return $this->databaseMapper->insert($this->leaveDetailsTable,$data);
+        
     }
 
     public function addLeaveType($data){
@@ -37,8 +38,7 @@ class LeaveModel extends Model{
     }
 
     public function updateLeaveStatus($id,$value){
-        return $this->databaseMapper->update($this->leaveDetailsTable,leave_status,'id',$value);
-
+        return $this->databaseMapper->update($this->leaveDetailsTable,['leave_status'=>$value],'id',$id);
     }
 
     public function getLeaveTypeById($id){

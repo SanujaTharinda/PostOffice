@@ -59,7 +59,8 @@ class LeaveManagementController extends Controller{
             'employee_type'=>$_POST['employee_type'],
             'leave_from'=>$_POST['leave_from'],
             'leave_to'=>$_POST['leave_to'],
-            'leave_description'=>$_POST['leave_description']
+            'leave_description'=>$_POST['leave_description'],
+            'leave_status'=>1
            
         ];
         $this->leaveModel->addLeave($data);
@@ -120,8 +121,7 @@ class LeaveManagementController extends Controller{
 
             $this->view('leavemanagement/leave_type_edit',$data);
 
-        }
-    
+        }    
     }
 
 }
