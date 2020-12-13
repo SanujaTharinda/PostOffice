@@ -1,6 +1,7 @@
 updateTable();
 
 
+
 function updateTable() {
 	
 	$.ajax({
