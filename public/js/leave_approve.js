@@ -54,7 +54,10 @@ function displayResults(data) {
                     var parent = this.parentElement;
                     updateState(id,value, parent, this);
                   });
-                  cell.appendChild(selectElement);
+                  const usertype = $('#leave_approve_tbody').attr('usertype');
+                  if(usertype == 'admin'){
+                      cell.appendChild(selectElement);
+                  }
 
                
                 }else if (j==2) {

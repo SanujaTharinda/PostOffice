@@ -1,3 +1,8 @@
+<?php
+session_start();
+$usertype = $_SESSION['usertype'];
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,7 +61,7 @@
          									   <th width="10%"></th>
                                     </tr>
                                  </thead>
-                                 <tbody id="leave_approve_tbody">
+                                 <tbody id="leave_approve_tbody" usertype = <?php echo $usertype?>>
                                  </tbody>
                               </table>
                            </div>
