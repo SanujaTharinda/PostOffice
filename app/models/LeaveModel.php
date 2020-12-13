@@ -19,8 +19,7 @@ class LeaveModel extends Model{
     }
 
     public function addLeave($data){
-         return $this->databaseMapper->insert($this->leaveDetailsTable,$data);
-        
+         return $this->databaseMapper->insert($this->leaveDetailsTable,$data);     
     }
 
     public function addLeaveType($data){
@@ -28,10 +27,8 @@ class LeaveModel extends Model{
     }
 
     public function deleteLeave($id){
-        return $this->databaseMapper->delete($this->leaveDetailsTable, 'id', $id);
-        
+        return $this->databaseMapper->delete($this->leaveDetailsTable, 'id', $id);      
     }
-
 
     public function deleteLeaveType($id){
         return $this->databaseMapper->delete($this->leaveTypeTable,'id',$id);
@@ -41,8 +38,7 @@ class LeaveModel extends Model{
         return $this->databaseMapper->update($this->leaveDetailsTable,['leave_status'=>$value],'id',$id);
     }
 
-    public function getLeaveTypeById($id){
-        
+    public function getLeaveTypeById($id){       
         $leaveTypeArray=$this->databaseMapper->find($this->leaveTypeTable,[],'id',$id);
         return array_shift($leaveTypeArray);
     }
@@ -50,11 +46,6 @@ class LeaveModel extends Model{
     public function editLeave($data){
         return $this->databaseMapper->update($this->leaveTypeTable,$data,'id',$data['id']);
     }
-
-
-
-
-
 
 }
 

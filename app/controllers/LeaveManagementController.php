@@ -43,7 +43,7 @@ class LeaveManagementController extends Controller{
 
     public function getLeaveApproveDetails(){
         $data = $this->leaveModel->getLeaveDetails();
-        echo json_encode($data);
+        echo json_encode(array_reverse($data));
 
     }
 
@@ -56,7 +56,7 @@ class LeaveManagementController extends Controller{
     public function submitLeave(){
         $data=[
             'employee_name'=>$_POST['name'],
-            'employee_type'=>$_POST['employee_type'],
+            'leave_type'=>$_POST['leave_type'],
             'leave_from'=>$_POST['leave_from'],
             'leave_to'=>$_POST['leave_to'],
             'leave_description'=>$_POST['leave_description'],
@@ -77,7 +77,7 @@ class LeaveManagementController extends Controller{
     }
 
     public function deleteLeaveForm($id){
-        $this->leaveModel->deleteLeave($id);
+        $this->leaveModel->deleteLeave($id[0]);
         $this->view('leavemanagement/leave_approve_panel');
     }
     

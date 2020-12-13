@@ -61,14 +61,6 @@ function displayResults(data) {
                   }
 
                
-                }else if (j==2) {
-                    if(values[j]==1){
-                        cell.innerHTML = "minor staff";
-                    }else if(values[j]==2){
-                        cell.innerHTML = "employee user";
-                    }else{
-                        cell.innerHTML = "main user";
-                    }
                 }else{
                     cell.innerHTML = values[j];
                 }
