@@ -1,9 +1,13 @@
 import {getTodayDate} from './helpers/timeAndDate.js';
-console.log("Helloooo");
 
-const today = getTodayDate();
-console.log(today);
-document.ready(updateSystemLog(today));
+
+let submit = document.getElementById('markAttendance');
+submit.addEventListener("click", log, false);
+
+function log(){
+    const today = getTodayDate();
+    document.ready(updateSystemLog(today));
+}
 
 function updateSystemLog(today) {
     $.ajax({

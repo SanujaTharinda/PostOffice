@@ -6,7 +6,6 @@ $(document).ready(function () {
         },
         url: "http://localhost/PostOffice/AttendanceController/markAttendanceDetails",
         success: function (data) {
-            console.log(data);
             displaySearchResults(JSON.parse(data));
         }
     });
