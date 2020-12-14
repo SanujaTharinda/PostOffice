@@ -64,6 +64,7 @@
                                         <th>Permenent Date</th>
                                         <th>Carrier</th>
                                         <th>Reg</th>
+                                        <th>User</th>
                                         <th></th>
                                         <th></th>
                                     </tr>

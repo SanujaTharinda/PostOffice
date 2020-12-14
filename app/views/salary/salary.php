@@ -60,7 +60,7 @@
                                                 </tr>
                                                 </thead>
 
-                                                <tbody id="#attendanceDetails-table-body"></tbody>
+                                                <tbody id="#salary-table-body"></tbody>
                                                 
                                             </table>
 
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-        <script src="<?php echo URLROOT; ?>public/js/salary.js"></script>
+        <script src="<?php echo PUBLICROOT; ?>/js/salary.js"></script>
 
         <script src="<?php echo PUBLICROOT; ?>js/custom.js"></script>
  

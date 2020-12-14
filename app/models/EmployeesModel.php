@@ -78,6 +78,13 @@ class EmployeesModel extends Model{
     public function editEmployee($data, $id){
         return $this->databaseMapper->update($this->minorStaffTable, $data, 'id', $id);
     }
+
+    public function editEmployeeByName($data, $name){
+       // die($name);
+     //  print_r($data);
+      // echo $name;
+        return $this->databaseMapper->update($this->minorStaffTable, $data, 'user', $name);
+    }
     
     public function searchDate($date){
         return $this->databaseMapper->find($this->attendanceTable, [], 'date', $date);
@@ -153,6 +160,20 @@ class EmployeesModel extends Model{
 
     public function getIds($day){
         $data = $this->databaseMapper->find($this->attendanceTable, ['presence', 'date'], 'date', $day);
+    }
+
+    public function getDetailsByNames($data){
+        $list = [];
+        foreach($data as $row){
+            $details =  $this->databaseMapper->find($this->minorStaffTable, [], 'full_name', $row);
+            if($details !=null){
+                $newarray = array_shift($details);
+                $array = json_decode(json_encode($newarray), true);
+                array_push($list, $array);
+            }
+        }
+        
+        return $list;
     }
 
 }

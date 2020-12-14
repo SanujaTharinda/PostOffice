@@ -25,7 +25,7 @@ function searchMonth(){
 }
 
 function displaySearchResults(data) {
-    const tableBody = document.getElementById("#attendanceDetails-table-body");
+    const tableBody = document.getElementById("#salary-table-body");
     tableBody.innerHTML = '';
     const numberOfRows = data.length;
 
@@ -34,7 +34,7 @@ function displaySearchResults(data) {
             let values = Object.values(data[i]);
             const numberOfColumns = values.length;
             var row = tableBody.insertRow(i);
-            if(numberOfColumns ==11){
+            if(numberOfColumns ==12){
                 for (let j = 0; j < 5; j++){
                     if(j == 2 || j==3 || j==4){
                         var cell = row.insertCell(j);

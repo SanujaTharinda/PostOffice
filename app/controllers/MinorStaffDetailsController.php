@@ -1,13 +1,14 @@
 <?php
 
-require_once APPROOT .'/models/EmployeesModel.php';
 require_once APPROOT .'/helpers/url_helper.php';
 
 class MinorStaffDetailsController extends Controller {
     private $employeeModel;
+    private $userModel;
 
     public function __construct(){
         $this->employeeModel = $this->loadModel("EmployeesModel");
+        $this->userModel = $this->loadModel("UsersModel");
     }
 
     public function minorStaffDetails(){
@@ -45,7 +46,8 @@ class MinorStaffDetailsController extends Controller {
                 'registered_day'=>$_POST['registered_day'],
                 'permenent_day'=>$_POST['permenent_day'],
                 'carrier'=>$_POST['carrier'],
-                'reg'=>$_POST['reg']
+                'reg'=>$_POST['reg'],
+                'user'=>$_POST['user']
             ];
 
             if($data['full_name']!="" && $data['nic']!="" && ($data['address'])!="" && ($data['telephone'])!=""
@@ -78,7 +80,10 @@ class MinorStaffDetailsController extends Controller {
 
             $gender = $this->selectGender();
 
-            $data = $this->createArray($gender);
+            $details = $this->userModel->findMainUserById('id',$_POST['user'],[]);
+            $userDetails = $this->updateUserTable($details,$_POST['full_name']);
+
+            $data = $this->createArray($gender,$userDetails['username']);
 
             if(!empty($data['full_name']) && !empty($data['nic']) && !empty($data['address']) && !empty($data['telephone'])){
                 if($this->employeeModel->findUserByNIC($data['nic'])){
@@ -89,7 +94,7 @@ class MinorStaffDetailsController extends Controller {
 
                 }else{
                    if($this->employeeModel->addEmployee($data)){
-
+                        $this->userModel->editMainUser($userDetails,$userDetails['id']);
                         redirect('MinorStaffDetailsController/minorStaffDetails');
                     }
                 }
@@ -102,6 +107,15 @@ class MinorStaffDetailsController extends Controller {
         }
     }
 
+    public function updateUserTable($data, $name){
+        $newarray = array_shift($data);
+        $array = json_decode(json_encode($newarray), true);
+        $Employeenames = array_pop($array);
+        $newString = $Employeenames.','.$name;
+        $array['employees'] = $newString;
+        return $array;
+    }
+
     public function selectGender(){
         if(isset($_REQUEST['gender'])){
             $gender=$_POST['gender'];
@@ -111,7 +125,7 @@ class MinorStaffDetailsController extends Controller {
         return $gender;
     }
 
-    public function createArray($gender){
+    public function createArray($gender,$user){
         $data=[
             'full_name'=>trim($_POST['full_name']),
             'nic'=>trim($_POST['nic']),
@@ -122,11 +136,17 @@ class MinorStaffDetailsController extends Controller {
             'registered_day'=>$_POST['date_2'],
             'permenent_day'=>$_POST['date_3'],
             'carrier'=>$_POST['carrier'],
-            'reg'=>$_POST['reg']
+            'reg'=>$_POST['reg'],
+            'user'=>$user
         ];
 
         return $data;
 
+    }
+
+    public function getUserDetails(){
+        $data = $this->userModel->getMainUsersDetails();
+        echo json_encode($data);
     }
 
 }

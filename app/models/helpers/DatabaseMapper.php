@@ -19,7 +19,6 @@ class DatabaseMapper implements Mapper{
 
 
     public function find($tableName, $columns, $key, $value){
-       // die($tableName);
         $columns = $this->getColumns($columns);
         $sql = "SELECT {$columns} FROM $tableName WHERE $key = :value";
         $this->database->query($sql);
@@ -61,7 +60,6 @@ class DatabaseMapper implements Mapper{
     public function update($tableName, $setters, $key, $value){
         $setters = $this->getSetters($setters);
         $sql = "UPDATE $tableName SET {$setters} WHERE $key =:value";
-      //  die($sql);
         $this->database->query($sql);
         $this->database->bind(':value', $value);
         return $this->database->execute();

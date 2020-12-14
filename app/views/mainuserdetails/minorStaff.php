@@ -25,17 +25,11 @@
 
         <nav class="navigationBar">
 
-            <?php require_once(APPROOT."/views/navbar/navbar.php")?>
+        <?php require_once(APPROOT."/views/navbar/navbar.php")?>
 
-           <div class="search">
-            </div>
+        </nav> 
 
-            <div class="margin">
-                <a href="<?php echo EMPLOYEE_USER_DETAILS_ADD_EMPLOYEEUSER_CLICK; ?>"><button  class="themeBtn">Add Employee User</button></a>
-            </div>
-
-        </nav>
-
+      
 
       <div class="content pb-0">
             <div class="orders">
@@ -50,17 +44,24 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Email</th>
-                                        <th>Username</th>
-                                        <th>Created Date</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Full Name</th>
+                                        <th>NIC</th>
+                                        <th>Address</th>
+                                        <th>Telephone</th>
+                                        <th>Gender</th>
+                                        <th>First Date</th>
+                                        <th>Registered Date</th>
+                                        <th>Permenent Date</th>
+                                        <th>Carrier</th>
+                                        <th>Reg</th>
                                     </tr>
                                     </thead>
 
                                     <tbody id="#minorStaffDetails-table-body"></tbody>
                                     
                                 </table>
+
+                                <small id="inform">No Minor Staff Details</small>
 
 
                             </div>
@@ -69,13 +70,11 @@
                   </div>
                </div>
             </div>
-		  </div>
+          </div>
 
 
      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-      
-
-     <script src="<?php echo URLROOT; ?>js/employeeUser.js"></script>
+     <script src="<?php echo URLROOT; ?>js/mainUser.js"></script>
 
      <script src="<?php echo PUBLICROOT; ?>js/custom.js"></script>
  

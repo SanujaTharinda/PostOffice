@@ -41,6 +41,11 @@ class MainUserDetailsController extends Controller {
             $onlyEmail = ['email'=>$data['email']];
 
             if($data['email']!="" && $data['username']!=""){
+                $newarray = $this->userModel->findMainUserById('id',$_POST['id'],['username']);
+                $array = array_shift($newarray);
+                $array = json_decode(json_encode($array), true);
+                $mainUserName = ['user'=>$data['username']];
+                $this->employeeModel->editEmployeeByName($mainUserName, $array['username']);
                 $this->userModel->editUser($onlyEmail, $loginTableID);
                 $this->userModel->editMainUser($data, $data['id']);
                 redirect('MainUserDetailsController/mainUserDetails');
@@ -62,7 +67,7 @@ class MainUserDetailsController extends Controller {
             $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
 
             $data = $this->createArray();
-            $values = ['email'=>$data['email'], 'password'=>trim($_POST['password']), 'usertype'=>'Main'];
+            $values = ['email'=>$data['email'], 'password'=>trim($_POST['username']), 'usertype'=>'Main'];
 
             if(!empty($data['email']) && !empty($data['username']) && !empty($values['password'])){
                 $this->userModel->addUser($values);
@@ -84,13 +89,13 @@ class MainUserDetailsController extends Controller {
         date_default_timezone_set('Asia/Colombo'); 
         $date=date("Y.m.d");
 
-        $names = $this->createString();
+     //   $names = $this->createString();
 
         $data=[
             'email'=>trim($_POST['email']),
             'username'=>trim($_POST['username']),
             'created_date'=>$date,
-            'employees'=>$names
+            'employees'=>''
 
         ];
 
@@ -98,7 +103,7 @@ class MainUserDetailsController extends Controller {
 
     }
 
-    public function createString(){
+   /* public function createString(){
         
         $employees = $this->employeeModel->getEmployeeNames();
         $names = '';
@@ -106,12 +111,25 @@ class MainUserDetailsController extends Controller {
             $names.=$row->full_name.",";
         }
         return $names;
-    }
+    }*/
 
     public function deleteMainUserDetails($email){
         $this->userModel->deleteUser($email[0]);
         $this->userModel->deleteMainUser($email[0]);
         redirect('MainUserDetailsController/mainUserDetails');
+    }
+
+    public function minorStaffDetails(){
+        $this->view('mainuserdetails/minorStaff');
+    }
+
+    public function showMinorStaffDetails(){
+        $names = $this->userModel->findMainUserById('id',$_POST['id'],[]);
+        $newarray = array_shift($names);
+        $string = json_decode(json_encode($newarray), true);
+        $array = explode(",", $string['employees']);
+        $details = $this->employeeModel->getDetailsByNames($array);
+        echo json_encode($details);
     }
 }
 

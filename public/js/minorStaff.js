@@ -13,6 +13,20 @@ $(function(){
         });
     }
 
+    else if(URL == 'http://localhost/PostOffice/MinorStaffDetailsController/addEmployeePage'){
+        $.ajax({
+            type: 'POST',
+            data: {
+                search: null
+            },
+            url: "http://localhost/PostOffice/MinorStaffDetailsController/getUserDetails",
+            success: function (data) {
+                addUser(JSON.parse(data));
+            }
+        });
+
+    }
+
     
     else if(URL != 'http://localhost/PostOffice/MinorStaffDetailsController/minorStaffDetails'){
         $(document).ready(function () {
@@ -23,6 +37,25 @@ $(function(){
     }
 
 });
+
+function addUser(data){
+    var selectElement = document.getElementById("user");
+    docFragment = document.createDocumentFragment();
+    const numberOfRows = data.length;
+    console.log(numberOfRows);
+
+    if(numberOfRows !=0){
+        for (let i = 0; i < numberOfRows; i++) {
+            let values = Object.values(data[i])
+            var option = document.createElement('option');
+            option.value = values[0];
+            option.appendChild(document.createTextNode(values[2]));
+            docFragment.appendChild(option);
+        }
+        selectElement.appendChild(docFragment);
+    }
+
+}
 
 function instantSearch(searchElement) {
     $.ajax({

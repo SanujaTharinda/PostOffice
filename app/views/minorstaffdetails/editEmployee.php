@@ -83,8 +83,8 @@
 												<input  id="edit9" type="text" class="form-control" value="" name="carrier">
 											</div>
 
-                                            <label class=" form-control-label"><b>If only replacement job</b></label>
 
+                                            <label class=" form-control-label"><b>If only replacement job</b></label>
 
                                             <div class="form-group">
                                                 <div class="form-label">
@@ -93,6 +93,11 @@
 												</div>
 											</div>
 
+											<div class="form-group">
+												<label class=" form-control-label">User</label>
+                                                <input id="edit11"type="text" class="form-control" value="" name="user">
+											</div>
+											
                                             <button  type="submit" name="submit" id="editSubmitButton" class="btn btn-lg btn-info btn-block">
                                                 <span id="payment-button-amount">Submit</span>
                                             </button>

@@ -107,6 +107,13 @@
 												</select>
 											</div>
 
+											<div class="form-group">
+												<label class=" form-control-label">User</label>
+												<select name='user' class="form-control" id="user">
+
+												</select>
+											</div>
+
 										<button  type="submit" name="submit" class="btn btn-lg btn-info btn-block">
 											<span id="payment-button-amount">Submit</span>
 										</button>
@@ -125,9 +132,9 @@
 
     </main>
     
-	<script src="<?php echo URLROOT; ?>js/minorStaff.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 	<script src="<?php echo URLROOT; ?>js/addEmployee.js"></script>
+	<script src="<?php echo URLROOT; ?>js/minorStaff.js"></script>
 
 </body>
 </html>
