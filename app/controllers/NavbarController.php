@@ -17,7 +17,7 @@ class NavbarController extends Controller{
     public function about(){
         $this->view("home/about");
     }
-
+    
     public function logout(){
         session_start();
         session_destroy();

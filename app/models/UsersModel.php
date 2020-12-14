@@ -32,10 +32,19 @@ class UsersModel extends Model{
 
     public function userExists($email){
         $user =  $this->findUser('email', $email, ['email']);
-        if(isset($user)) {
-            return true;
-        }
-        return false;
+        return isset($user);
+    }
+
+    public function changeUsername($oldUsername, $newUsername){
+        return $this->databaseMapper->update($this->usersTable,['email'=>$newUsername ], 'email',$oldUsername);
+        
+
+    }
+
+    public function changePassword($username, $newPassword){
+        return $this->databaseMapper->update($this->usersTable,['password'=>$newPassword ], 'email',$username);
+        
+
     }
 
     public function getUserType($email){
