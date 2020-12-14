@@ -1,0 +1,63 @@
+body{
+    background-image: url("../img/loginPageCover.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    color: red;
+}
+
+p{
+    color: red;
+}
+
+hr{
+    border-width: 1px;
+    border-color: grey;
+}
+
+
+
+
+.profile {  
+  width: 30%;
+  background-color: whitesmoke;
+  margin: 14% auto;
+  border-radius: 0.5rem;
+  padding: 10px;
+   
+}
+
+
+
+.change-username{
+    margin-right: 15px;
+}
+
+
+
+.profile-heading{
+    margin-top: 5px;
+    padding: 0;
+}
+
+.profile-middle{
+    text-align: center;
+}
+
+#profile-bottom{
+    text-align: center;
+    color: red;
+
+
+}
+
+.new-username{
+    margin-left: 13%;
+}
+
+.change{
+    margin: 5px;
+}
+
+.re-enter-password{
+    
+}

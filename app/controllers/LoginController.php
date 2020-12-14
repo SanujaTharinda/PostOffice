@@ -19,6 +19,10 @@ class LoginController extends Controller{
     
     }
 
+    public function loginFail(){
+        $this->view("login/loginFail", []);
+    }
+
     public function loggedIn(){
         $this->view("login/loggedIn", []);
     }
@@ -33,7 +37,7 @@ class LoginController extends Controller{
         $_SESSION['usertype'] = $userType;
         if(!$isValid or !isset($userType)){
             session_destroy();
-            redirect("LoginController");
+            redirect("LoginController/loginFail");
             
         }else{
             redirect("HomeController/homePage/$userType");

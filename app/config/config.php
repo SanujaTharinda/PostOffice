@@ -28,6 +28,7 @@ define("LOGIN_SUBMIT", URLROOT."LoginController/validate");
 
 define("HOME_CLICK", URLROOT."NavbarController/home");
 define("ABOUT_CLICK", URLROOT."NavbarController/about");
+define('PROFILE_CLICK',URLROOT."ProfileController/profile");
 define("LOGOUT_CLICK", URLROOT."NavbarController/logout");
 
 //HomePage

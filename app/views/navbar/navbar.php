@@ -30,15 +30,11 @@
                                     <li><a href=<?php echo HOME_CLICK;?>>Home</a></li>
                                     <li><a href=<?php echo ABOUT_CLICK;?>>About</a></li>
 
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" >
-                                            Profile
-                                            <i class="fa fa-caret-down"></i>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="<?php echo PROFILE_CLICK;?>"> 
+                                            <i class="far fa-user-circle fa-2x"></i>
                                         </a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="index.php">Name</a>
-                                            
-                                        </div>
+
                                     </li>
 
                                     <li><a class="btn btn-logout" href="<?php echo LOGOUT_CLICK;?>">Logout</a></li>

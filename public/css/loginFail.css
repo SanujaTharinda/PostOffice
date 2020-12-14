@@ -1,0 +1,15 @@
+body{
+    background-image: url("../img/loginPageCover.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+.content{
+    border-radius: 0.25rem;
+    background-color: whitesmoke;
+    width: 30%;
+    position: relative;
+    padding: 25px;
+    margin-top: 15%;
+}
