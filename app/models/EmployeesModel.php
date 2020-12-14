@@ -59,8 +59,8 @@ class EmployeesModel extends Model{
     }
 
     
-    public function getNameId(){
-        return $this->databaseMapper->get($this->minorStaffTable, []);
+    public function getNameId($columns){
+        return $this->databaseMapper->get($this->minorStaffTable, $columns);
     }
 
     public function addEmployee($data){
@@ -80,9 +80,6 @@ class EmployeesModel extends Model{
     }
 
     public function editEmployeeByName($data, $name){
-       // die($name);
-     //  print_r($data);
-      // echo $name;
         return $this->databaseMapper->update($this->minorStaffTable, $data, 'user', $name);
     }
     
@@ -96,6 +93,7 @@ class EmployeesModel extends Model{
     
     public function isMarked($date){
         $attendance = $this->searchDate($date);
+      //  print_r($attendance);
         return $attendance;
     }
 
@@ -103,7 +101,6 @@ class EmployeesModel extends Model{
         for ($i=0; $i<sizeof($list); $i++){
             $this->databaseMapper->insert($this->attendanceTable,$list[$i]);
         }
-
     }
 
     private function getAttendanceLastWeek($dayId){
@@ -174,6 +171,17 @@ class EmployeesModel extends Model{
         }
         
         return $list;
+    }
+
+    public function getLateComes($columns, $date){
+        return $this->databaseMapper->find($this->attendanceTable,$columns,'date', $date);
+    }
+
+    public function reMarkAttendance($data){
+        for ($i=0; $i<sizeof($data); $i++){
+            $this->databaseMapper->update($this->attendanceTable,$data[$i],'id',$data[$i]['id']);
+        }
+        return 'marked';
     }
 
 }

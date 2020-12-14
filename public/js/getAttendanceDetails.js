@@ -21,14 +21,11 @@ function displaySearchResults(data) {
         for (let i = 0; i < numberOfRows; i++) {
             let values = Object.values(data[i]);
             const numberOfColumns = values.length;
-       //     console.log(numberOfColumns);
+            console.log(numberOfColumns);
             var row = tableBody.insertRow(i);
-            if(numberOfColumns === 11){
-                for (let j = 0; j < 4; j++){
-                    if(j == 2){
-                        var cell = row.insertCell(j);
-                        cell.innerHTML = '-';
-                    }else if(j == 3){
+            if(numberOfColumns == 2){
+                for (let j = 0; j < numberOfColumns+3; j++){
+                    if(j == 2 || j==3 || j==4){
                         var cell = row.insertCell(j);
                         cell.innerHTML = '-';
                     }else{
@@ -39,12 +36,10 @@ function displaySearchResults(data) {
                 }
             }
             else{
-                if(numberOfColumns === 5){
-                    for (let k = 1; k < numberOfColumns; k++) {    
-                        var cell = row.insertCell(k-1);
-                        cell.innerHTML = values[k];
+                for (let k = 1; k < numberOfColumns; k++) {    
+                    var cell = row.insertCell(k-1);
+                    cell.innerHTML = values[k];
                 
-                    }
                 }
             }
         }
@@ -63,7 +58,7 @@ function searchDetails(Searchdate){
         },
         url: "http://localhost/PostOffice/AttendanceController/searchAttendance",
         success: function (data) {
-           // console.log(data);
+            console.log(data);
             displaySearchResults(JSON.parse(data));
         }
     });

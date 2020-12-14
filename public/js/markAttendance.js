@@ -6,7 +6,7 @@ $(document).ready(function () {
         },
         url: "http://localhost/PostOffice/AttendanceController/markAttendanceDetails",
         success: function (data) {
-           // console.log(data);
+            console.log(data);
             displaySearchResults(JSON.parse(data));
         }
     });
@@ -15,17 +15,16 @@ $(document).ready(function () {
 
 
 function displaySearchResults(data) {
-    const tableBody = document.getElementById("#attendanceDetails-table-body");
+    const tableBody = document.getElementById("attendanceDetails-table-body");
     tableBody.innerHTML = '';
     const numberOfRows = data.length;
 
     for (let i = 0; i < numberOfRows; i++) {
         let values = Object.values(data[i]);
-        const numberOfColumns = 4;
+        const numberOfColumns = values.length;
         var row = tableBody.insertRow(i);
 
-        for (let j = 0; j < numberOfColumns; j++) {
-            //console.log(values[j]);
+        for (let j = 0; j < numberOfColumns+2; j++) {
                 if(j == 2){
                     var cell = row.insertCell(j);
                     var x = document.createElement("INPUT");

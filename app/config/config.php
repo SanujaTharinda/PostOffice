@@ -67,6 +67,7 @@ define("LEAVE_TYPE_CLICK", URLROOT."LeaveManagementController/leaveTypePanel");
 //Attendance
 
 define("ATTENDANCE_CLICK",URLROOT."AttendanceController/attendanceDashboard");
+define("MARK_ATTENDANCE_LATE_COMES_CLICK",URLROOT."AttendanceController/lateComesPage");
 
 //Duty Arrangement
 

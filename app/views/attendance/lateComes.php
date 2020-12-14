@@ -19,52 +19,65 @@
         <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/responsive.css">
 
 
+
     </head>
 
     <body class="body-content">
 
     <?php require_once(APPROOT."/views/navbar/navbar.php")?>
 
-        <nav class="navigationBar">
-            <div class="content pb-0">
-                <div class="orders">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="card"> 
-                                <div class="card-body--">
+    <nav class="navigationBar">
+
+            <form action="<?php echo URLROOT; ?>AttendanceController/lateComesPage" method="post">
+
+
+                <div class="content pb-0">
+                        <div class="orders">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    
+                                    <div class="card-body--">
                                     <div class="table-stats order-table ov-h">
-                                        <div class="searchDate">
-                                            <input type="date" oninput='searchDetails(this.value)' name="start_date" id="start_date">
-                                        </div> 
+
+                                        <div class="inform-attendance">
+
+                                        </div>
 
                                             <table class="table table-hover">
                                                 <thead>
                                                 <tr>
+                                                    <th>Row ID</th>
                                                     <th>Id</th>
                                                     <th>Full Name</th>
-                                                    <th>Presence</th>
+                                                    <th>Status</th>
                                                     <th>Date</th>
                                                     <th>Special Note</th>
                                                 </tr>
                                                 </thead>
 
-                                                <tbody id="#attendanceDetails-table-body"></tbody>
+                                                <tbody id="lateComes-table-body"></tbody>
                                                 
                                             </table>
+                                            <div class="submit">
+                                                <button id="markAttendance" type="submit" name="save">Submit</button>
+                                            </div>
 
-                                            <small id="inform">No Attendance</small>
-    	                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+            </form>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="<?php echo URLROOT; ?>public/js/getAttendanceDetails.js"></script>
 
-        <script src="<?php echo PUBLICROOT; ?>js/custom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+      
+    <script src="<?php echo URLROOT; ?>public/js/lateComes.js"></script>
+
+    <script src="<?php echo PUBLICROOT; ?>js/custom.js"></script>
  
     </body>
  

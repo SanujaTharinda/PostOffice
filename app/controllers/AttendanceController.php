@@ -17,7 +17,8 @@ class AttendanceController extends Controller{
     }
 
     public function getAttendance(){
-        $data = $this->employeeModel->getNameId();
+        $columns = ['id','full_name'];
+        $data = $this->employeeModel->getNameId($columns);
         echo json_encode($data);
     }
 
@@ -35,8 +36,8 @@ class AttendanceController extends Controller{
 
     public function markAttendance(){
         if($_SERVER['REQUEST_METHOD']=='POST'){    
-
-            $employee = $this->employeeModel->getNameId();
+            $columns = ['id','full_name'];
+            $employee = $this->employeeModel->getNameId($columns);
             $newarray = json_decode(json_encode($employee), true);
          
             $newData = [];
@@ -61,7 +62,6 @@ class AttendanceController extends Controller{
                 }
                 array_push($newData, $data);
             }
-
             if(!$this->employeeModel->isMarked($date)){
                 $employee = $this->employeeModel->markAttendance($newData);
                 $isMarked ="";
@@ -90,8 +90,57 @@ class AttendanceController extends Controller{
     }
 
     public function markAttendanceDetails(){
-        $data = $this->employeeModel->getNameId();
+        $columns = ['id','full_name'];
+        $data = $this->employeeModel->getNameId($columns);
         echo json_encode ($data);
     }
+
+    public function lateComesPage(){
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $columns = ['id','full_name','presence'];
+            $newData = [];
+            date_default_timezone_set('Asia/Colombo'); 
+            $date=date("Y.m.d");
+
+            $employee = $this->employeeModel->getLateComes($columns,$date);
+            $newarray = json_decode(json_encode($employee), true);
+
+            for ($i=0; $i < sizeof($newarray); $i++) { 
+                if($newarray[$i]['presence'] == 'Not Marked'){
+                   $data = ['id' => $newarray[$i]['id'],
+                            'full_name' => $newarray[$i]['full_name'],
+                            'presence' => $_POST["status"."{$newarray[$i]['id']}"],
+                            'special_note' => $_POST['special_note'."{$newarray[$i]['id']}"]
+                           ];
+                }
+                else {
+                   $data =['id' => $newarray[$i]['id'],
+                           'full_name' => $newarray[$i]['full_name'],
+                           'special_note' => $_POST['special_note'."{$newarray[$i]['id']}"]
+                          ];
+                }
+                array_push($newData, $data);
+            }
+
+            if($this->employeeModel->reMarkAttendance($newData)){
+               $this->view('attendance/lateComes');
+            }
+
+        }
+        else{
+            $this->view('attendance/lateComes');
+        }
+       
+    }
+
+    public function lateComesDetails(){
+        date_default_timezone_set('Asia/Colombo'); 
+        $date=date("Y.m.d");
+        $new_date=str_replace("-",".",$date,$new_date);
+        $data = $this->employeeModel->searchDate($new_date);
+        echo json_encode($data);
+
+    }
+
 
 }

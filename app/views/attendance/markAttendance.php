@@ -26,7 +26,18 @@
 
     <?php require_once(APPROOT."/views/navbar/navbar.php")?>
 
-      <nav class="navigationBar">
+    <nav class="navigationBar">
+
+      <?php require_once(APPROOT."/views/navbar/navbar.php");?>
+
+        <div class="search">
+        </div>
+
+        <div class="margin">
+            <a href=<?php echo MARK_ATTENDANCE_LATE_COMES_CLICK; ?>><button  class="themeBtn">Late Comes Mark</button></a>
+        </div>
+
+        </nav>
 
             <form action="<?php echo URLROOT; ?>AttendanceController/markAttendance" method="post">
 
@@ -57,7 +68,7 @@
                                                 </tr>
                                                 </thead>
 
-                                                <tbody id="#attendanceDetails-table-body"></tbody>
+                                                <tbody id="attendanceDetails-table-body"></tbody>
                                                 
                                             </table>
                                             <div class="submit">

@@ -25,6 +25,7 @@ function searchMonth(){
 }
 
 function displaySearchResults(data) {
+    console.log(data);
     const tableBody = document.getElementById("#salary-table-body");
     tableBody.innerHTML = '';
     const numberOfRows = data.length;
@@ -34,7 +35,7 @@ function displaySearchResults(data) {
             let values = Object.values(data[i]);
             const numberOfColumns = values.length;
             var row = tableBody.insertRow(i);
-            if(numberOfColumns ==12){
+          /*  if(numberOfColumns ==12){
                 for (let j = 0; j < 5; j++){
                     if(j == 2 || j==3 || j==4){
                         var cell = row.insertCell(j);
@@ -47,6 +48,26 @@ function displaySearchResults(data) {
                 }
             }
             else{
+                for (let j = 0; j < numberOfColumns-1; j++) {           
+                    var cell = row.insertCell(j);
+                    cell.innerHTML = values[j];
+            
+                }
+            }*/
+            if(numberOfColumns ==2){
+                for (let j = 0; j < numberOfColumns+3; j++){
+                    if(j == 2 || j==3 || j==4){
+                        var cell = row.insertCell(j);
+                        cell.innerHTML = '-';
+                    }else{
+                        var cell = row.insertCell(j);
+                        cell.innerHTML = values[j];
+                    }
+        
+                }
+            }
+            else{
+                console.log('sffddfdsfsdfsd');
                 for (let j = 0; j < numberOfColumns-1; j++) {           
                     var cell = row.insertCell(j);
                     cell.innerHTML = values[j];

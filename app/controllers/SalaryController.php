@@ -12,7 +12,8 @@ class SalaryController extends Controller{
     }
 
     public function getSalary(){
-        $data = $this->employeeModel->getNameId();
+        $columns = ['id','full_name'];
+        $data = $this->employeeModel->getNameId($columns);
         echo json_encode ($data);
     }
 
