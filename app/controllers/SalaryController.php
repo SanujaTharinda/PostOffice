@@ -19,9 +19,12 @@ class SalaryController extends Controller{
 
     public function searchSalary(){
         $month=$_POST['search'];
-        $data = $this->employeeModel->getSalary($month);
-        echo json_encode ($data);
+        $month_array = (explode("/",$month));
+        $month_new = $month_array[1].".".$month_array[0];
+        $new_data = $this->employeeModel->getSalaryDetails($month_new);
+        echo json_encode ($new_data);
     }
+
 }
 
 

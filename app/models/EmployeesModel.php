@@ -188,4 +188,28 @@ class EmployeesModel extends Model{
         return 'marked';
     }
 
+    public function getSalaryDetails($month){
+        $result = [];
+        $count_array = [];
+        $newarray = $this->databaseMapper->findLike($this->attendanceTable, [], 'date',$month);
+        $array =json_decode(json_encode($newarray), true);
+
+        $new = array_filter($array, function ($array) {
+            return ($array['presence'] == 'present');
+        });
+
+        foreach ($new as $element) {
+            $result[$element['employee_id']][] = $element;
+        }
+
+        foreach($result as $element){
+            $count = [];
+            $count['employee_id'] = $element[0]['employee_id'];
+            $count['full_name'] = $element[0]['full_name'];
+            $count['count'] = sizeof($element);
+            array_push($count_array,$count);
+        }
+        return $count_array;
+    }
+
 }

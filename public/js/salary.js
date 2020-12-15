@@ -25,7 +25,7 @@ function searchMonth(){
 }
 
 function displaySearchResults(data) {
-    console.log(data);
+  //  console.log(data);
     const tableBody = document.getElementById("#salary-table-body");
     tableBody.innerHTML = '';
     const numberOfRows = data.length;
@@ -35,25 +35,8 @@ function displaySearchResults(data) {
             let values = Object.values(data[i]);
             const numberOfColumns = values.length;
             var row = tableBody.insertRow(i);
-          /*  if(numberOfColumns ==12){
-                for (let j = 0; j < 5; j++){
-                    if(j == 2 || j==3 || j==4){
-                        var cell = row.insertCell(j);
-                        cell.innerHTML = '-';
-                    }else{
-                        var cell = row.insertCell(j);
-                        cell.innerHTML = values[j];
-                    }
-        
-                }
-            }
-            else{
-                for (let j = 0; j < numberOfColumns-1; j++) {           
-                    var cell = row.insertCell(j);
-                    cell.innerHTML = values[j];
-            
-                }
-            }*/
+            row.setAttribute("id", values[i]);
+
             if(numberOfColumns ==2){
                 for (let j = 0; j < numberOfColumns+3; j++){
                     if(j == 2 || j==3 || j==4){
@@ -67,10 +50,19 @@ function displaySearchResults(data) {
                 }
             }
             else{
-                console.log('sffddfdsfsdfsd');
-                for (let j = 0; j < numberOfColumns-1; j++) {           
+                for (let j = 0; j < numberOfColumns+2; j++) { 
                     var cell = row.insertCell(j);
-                    cell.innerHTML = values[j];
+                    if(j == 2){
+                        cell.innerHTML = values[j]*500;
+                    } 
+                    else if(j==3 || j==4){
+                        cell.innerHTML = '-';
+                    }    
+                    else{
+                        cell.innerHTML = values[j];
+                    }     
+                    
+                    
             
                 }
             }
@@ -83,7 +75,6 @@ function displaySearchResults(data) {
 }
 
 function searchDetails(Searchmonth){
-    console.log(Searchmonth);
     $.ajax({
         type: 'POST',
         data: {
@@ -91,9 +82,12 @@ function searchDetails(Searchmonth){
         },
         url: "http://localhost/PostOffice/SalaryController/searchSalary",
         success: function (data) {
-            displaySearchResults(JSON.parse(data));
+            console.log(data);
+           displaySearchResults(JSON.parse(data));
         }
     });
 }
+
+
 
 
