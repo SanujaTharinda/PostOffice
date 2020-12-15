@@ -3,19 +3,12 @@
  <html>
     <head>
     <title></title>
-       
-        <link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/normalize.css">
-		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/bootstrap.min.css">
-		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/font-awesome.min.css">
-		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/themify-icons.css">
-		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/pe-icon-7-filled.css">
-		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/flag-icon.min.css">
-		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/cs-skin-elastic.css">
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Roboto+Condensed?selection.family=Roboto+Condensed:300,300i,400,400i,700,700i">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" integrity="sha512-4e743y/yh7ffjixFn2DBKvAA0j02JNn0iQ/bIq6usesbp6TRPcZFW0XHnwfSnpTtsTmMGh0UmvbXY26aJfIb0Q==" crossorigin="anonymous" />
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/dutyArrangement.css">
 
-        
     </head>
 
     <body class="body-content">
@@ -23,15 +16,15 @@
         <?php require_once '../app/views/navbar/navbar.php'; ?>
 
         <div class="addDutyBar">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                         <div class="dutyHeader">
                             <h5>OT Management</h5>
                         </div>
                     </div>
 
-                    <div class="col-md-4 ">
+                    <div class="col-md-3">
                         <div class="form-label">
                             <div class="ot-date">
                                 <?php $date=date('Y/m/d'); ?>
@@ -40,9 +33,11 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <a href="<?php echo URLROOT;?>OtManagementController/addOtPage"><button class="addDutyBtn">Add OT</button></a>
                     </div>
+
+                    <div class="col-md-1"></div>
 
                     <div class="col-md-1">
                         <a href="<?php echo URLROOT;?>DutyArrangementController/dutyArrangement"><button class="addDutyBtn">Back</button></a>
@@ -84,7 +79,10 @@
             </div> 
         </div>  
 
-        <script src="<?php echo PUBLICROOT;?>js/jquery.js" ></script>
+        <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
+	    <script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/8fec142aee.js" crossorigin="anonymous"></script>
         <script src="<?php echo PUBLICROOT;?>js/ot.js"></script>
         
         

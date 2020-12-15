@@ -33,5 +33,12 @@
                </div>
             </div>
          </div>
+
+         <div class="row">          
+			   <div class="col">
+				   <a href="<?php echo URLROOT;?>LeaveManagementController/leaveTypePanel"><button class="backBtn">Back</button></a>
+			   </div>
+		   </div>
+				
 </body>
 </html>

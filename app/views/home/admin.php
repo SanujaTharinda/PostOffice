@@ -99,7 +99,7 @@
                                 <div class="col-md-4">
                                     <div class="Item">
                                         <div class="Item-icon">
-                                            <i class="fa fa-sitemap fa-4x"></i>
+                                            <i class="fa fa-sign-out fa-4x"></i>
                                         </div>
                                         
                                         <div class="Item-title">

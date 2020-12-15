@@ -22,7 +22,7 @@
 
     </head>
 
-    <body class="body-content">
+    <body class="body-content ">
 
     <?php require_once(APPROOT."/views/navbar/navbar.php")?>
 
@@ -30,12 +30,27 @@
 
       <?php require_once(APPROOT."/views/navbar/navbar.php");?>
 
-        <div class="search">
+        
+        <div class="margin">
+            <div class="container">
+                <div class="row">
+                
+                <div class="col-md-7"></div>
+
+                <div class="col-md-4">
+                    <a href=<?php echo MARK_ATTENDANCE_LATE_COMES_CLICK; ?>><button  class="themeBtn">Late Comes Mark</button></a>
+                </div>
+                
+                <div class="col-md-1">
+                    <a href="<?php echo URLROOT;?>AttendanceController/attendanceDashboard"><button class="themeBtn">Back</button></a>
+                </div>
+
+            </div>
         </div>
 
-        <div class="margin">
-            <a href=<?php echo MARK_ATTENDANCE_LATE_COMES_CLICK; ?>><button  class="themeBtn">Late Comes Mark</button></a>
         </div>
+
+
 
         </nav>
 
@@ -49,7 +64,7 @@
                                 <div class="card">
                                     
                                     <div class="card-body--">
-                                    <div class="table-stats order-table ov-h">
+                                    <div class="table-stats ov-h">
 
                                         <div class="inform-attendance">
                                             <?php if($data['data'] == 'Marked') {

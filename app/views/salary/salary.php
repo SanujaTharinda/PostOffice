@@ -43,7 +43,7 @@
                         <div class="col-xl-12">
                             <div class="card"> 
                                 <div class="card-body--">
-                                    <div class="table-stats order-table ov-h">
+                                    <div class="table-stats ov-h">
                                         <div class="searchDate">
                                             <input id="DialogDemo" class='Default' type="text" name="cmonth" autocomplete="off">
                                             <input onclick="searchMonth()"  type="button" name="submit" value="Search" class="salarySearch">
