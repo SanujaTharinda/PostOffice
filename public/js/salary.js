@@ -1,3 +1,5 @@
+let dailyRate = 0;
+
 $(function () {
     $.ajax({
         type: 'POST',
@@ -38,8 +40,8 @@ function displaySearchResults(data) {
             row.setAttribute("id", values[i]);
 
             if(numberOfColumns ==2){
-                for (let j = 0; j < numberOfColumns+3; j++){
-                    if(j == 2 || j==3 || j==4){
+                for (let j = 0; j < numberOfColumns+1; j++){
+                    if(j == 2){
                         var cell = row.insertCell(j);
                         cell.innerHTML = '-';
                     }else{
@@ -50,13 +52,10 @@ function displaySearchResults(data) {
                 }
             }
             else{
-                for (let j = 0; j < numberOfColumns+2; j++) { 
+                for (let j = 0; j < numberOfColumns; j++) { 
                     var cell = row.insertCell(j);
                     if(j == 2){
-                        cell.innerHTML = values[j]*500;
-                    } 
-                    else if(j==3 || j==4){
-                        cell.innerHTML = '-';
+                        cell.innerHTML = "Rs: "+((values[j]*dailyRate).toString());
                     }    
                     else{
                         cell.innerHTML = values[j];
@@ -82,10 +81,15 @@ function searchDetails(Searchmonth){
         },
         url: "http://localhost/PostOffice/SalaryController/searchSalary",
         success: function (data) {
-            console.log(data);
            displaySearchResults(JSON.parse(data));
         }
     });
+}
+
+
+function setDailyRate(value){
+    dailyRate = value;
+    
 }
 
 
