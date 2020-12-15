@@ -66,7 +66,7 @@ class MainUserDetailsController extends Controller {
             $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
 
             $data = $this->createArray();
-            $values = ['email'=>$data['email'], 'password'=>trim($_POST['username']), 'usertype'=>'Main'];
+            $values = ['email'=>$data['username'], 'password'=>trim(password_hash($_POST['username'], PASSWORD_DEFAULT)), 'usertype'=>'Main'];
 
             if(!empty($data['email']) && !empty($data['username']) && !empty($values['password'])){
                 $this->userModel->addUser($values);

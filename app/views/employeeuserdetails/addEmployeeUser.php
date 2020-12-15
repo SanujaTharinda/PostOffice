@@ -37,10 +37,7 @@
 											<label class=" form-control-label">Username</label>
 											<input type="text"  name="username" placeholder="Enter username" class="form-control" required>
 										</div>
-										<div class="form-group">
-											<label class=" form-control-label">Password</label>
-											<input type="text"  name="password" placeholder="Enter password" class="form-control" required>
-                                        </div>
+									
                                             											
 											
 										<button  type="submit" name="submit" class="btn btn-lg btn-info btn-block">

@@ -69,6 +69,7 @@ class EmployeesModel extends Model{
 
     public function addEmployee($data){
         return $this->databaseMapper->insert($this->minorStaffTable, $data);
+        
     }
 
     public function findEmployeeById($id){
