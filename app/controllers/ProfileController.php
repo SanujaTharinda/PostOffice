@@ -34,7 +34,7 @@ class ProfileController extends Controller{
     public function changePassword(){
         $username = $_POST['username'];
         $newPassword = $_POST['newPassword'];
-        if($this->usersModel->changePassword($username, $newPassword)){
+        if($this->usersModel->changePassword($username, password_hash($newPassword, PASSWORD_DEFAULT))){
             echo "Successfully changed";
         }else{
             echo "Couldn't change password";

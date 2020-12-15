@@ -15,8 +15,7 @@ class UsersModel extends Model{
         $isValid = false;
         $user = $this->findUser('email', $email, ['password']);
         if(isset($user) and isset($user->password)){
-            if($password == $user->password)
-            $isValid = true;
+            $isValid = password_verify($password, $user->password);
         }
         return $isValid;   
     }
