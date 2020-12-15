@@ -35,7 +35,6 @@ class MainUserDetailsController extends Controller {
                 'id'=>$_POST['id'],
                 'email'=>$_POST['email'],
                 'username'=>$_POST['username'],
-                'employees'=>$_POST['employees'],
             ];
 
             $onlyEmail = ['email'=>$data['email']];
@@ -89,8 +88,6 @@ class MainUserDetailsController extends Controller {
         date_default_timezone_set('Asia/Colombo'); 
         $date=date("Y.m.d");
 
-     //   $names = $this->createString();
-
         $data=[
             'email'=>trim($_POST['email']),
             'username'=>trim($_POST['username']),
@@ -102,16 +99,6 @@ class MainUserDetailsController extends Controller {
         return $data;
 
     }
-
-   /* public function createString(){
-        
-        $employees = $this->employeeModel->getEmployeeNames();
-        $names = '';
-        foreach ($employees as $row) {
-            $names.=$row->full_name.",";
-        }
-        return $names;
-    }*/
 
     public function deleteMainUserDetails($email){
         $this->userModel->deleteUser($email[0]);
