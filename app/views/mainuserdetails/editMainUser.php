@@ -48,10 +48,10 @@
 												<input id="edit2" type="text" class="form-control" value="" name="username">
 											</div>
 
-                                            <div class="form-group">
+                                         <!--   <div class="form-group">
 												<label class=" form-control-label">Employees</label>
 												<input id="edit4" type="text" class="form-control" value="" name="employees" autocomplete="off">
-											</div>
+											</div>-->
 
 
                                             <button  type="submit" name="submit" id="editSubmitButton" class="btn btn-lg btn-info btn-block">

@@ -66,14 +66,7 @@
                                     <div class="card-body--">
                                     <div class="table-stats ov-h">
 
-                                        <div class="inform-attendance">
-                                            <?php if($data['data'] == 'Marked') {
-                                                    echo 'Attendance already marked.';
-                                                }
-                                            ?>
-                                        </div>
-
-                                            <table class="table table-hover">
+                                            <table class="table table-hover" id="attendance">
                                                 <thead>
                                                 <tr>
                                                     <th>Id</th>
@@ -86,8 +79,9 @@
                                                 <tbody id="attendanceDetails-table-body"></tbody>
                                                 
                                             </table>
-                                            <div class="submit">
-                                                <button  id="markAttendance" type="submit" name="save">Submit</button>
+
+                                            <div id="mark" class="submit">
+                                               <!-- <button  id="markAttendance" type="submit" name="save">Submit</button>-->
                                             </div>
 
                                         </div>

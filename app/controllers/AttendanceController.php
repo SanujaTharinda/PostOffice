@@ -42,6 +42,7 @@ class AttendanceController extends Controller{
     }
 
     public function markAttendance(){
+
         if($_SERVER['REQUEST_METHOD']=='POST'){    
             $columns = ['id','full_name'];
             $employee = $this->employeeModel->getNameId($columns);
@@ -69,21 +70,14 @@ class AttendanceController extends Controller{
                 }
                 array_push($newData, $data);
             }
-            if(!$this->employeeModel->isMarked($date)){
-                $employee = $this->employeeModel->markAttendance($newData);
-                $isMarked ="";
-                $this->markAttendanceView($isMarked);
-            
-            }
-            else{
-                $isMarked ="Marked";
-                $this->markAttendanceView($isMarked);
-            }
+            $this->employeeModel->markAttendance($newData);
+            $isMarked ="";
+            $this->markAttendanceView($isMarked);
 
         }else{
             $isMarked ="";
             $this->markAttendanceView($isMarked);
-       
+
         }
     
     }
@@ -97,9 +91,18 @@ class AttendanceController extends Controller{
     }
 
     public function markAttendanceDetails(){
-        $columns = ['id','full_name'];
-        $data = $this->employeeModel->getNameId($columns);
-        echo json_encode ($data);
+        date_default_timezone_set('Asia/Colombo'); 
+        $date=date("Y.m.d");
+        if(!$this->employeeModel->isMarked($date)){
+            $columns = ['id','full_name'];
+            $data = $this->employeeModel->getNameId($columns);
+            echo json_encode ($data);
+        }
+        else{
+            $data=[];
+            echo json_encode ($data);
+        }
+
     }
 
     public function lateComesPage(){
