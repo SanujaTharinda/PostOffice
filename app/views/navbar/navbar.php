@@ -1,4 +1,10 @@
+<?php 
 
+session_start();
+$username = $_SESSION['username'];
+
+
+?>
 <header>
 
                 <nav class="navbar top-nav navbar-fixed-top" role="navigation">
@@ -29,13 +35,16 @@
                                     
                                     <li><a href=<?php echo HOME_CLICK;?>>Home</a></li>
                                     <li><a href=<?php echo ABOUT_CLICK;?>>About</a></li>
-
-                                    <li class="nav-item">
+                                    
+                                    
+                                    <li>
                                         <a class="nav-link " href="<?php echo PROFILE_CLICK;?>"> 
                                             <i class="far fa-user-circle fa-2x"></i>
+                                            <?php echo $username;?>
                                         </a>
-
                                     </li>
+                                    
+
 
                                     <li><a class="btn btn-logout" href="<?php echo LOGOUT_CLICK;?>">Logout</a></li>
                                 </ul>
