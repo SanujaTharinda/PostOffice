@@ -62,7 +62,7 @@ class EmployeeUserDetailsController extends Controller {
             $_POST=filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
 
             $data = $this->createArray();
-            $values= ['email'=>$data['email'], 'usertype'=>"Employee", 'password'=>trim($_POST['password'])];
+            $values= ['email'=>$data['email'], 'usertype'=>"Employee", 'password'=>trim($_POST['username'])];
 
             if(!empty($data['email']) && !empty($data['username']) && !empty($values['password'])){
                 $this->userModel->addUser($values);

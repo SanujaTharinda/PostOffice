@@ -87,13 +87,12 @@ class EmployeesModel extends Model{
         return $this->databaseMapper->find($this->attendanceTable, [], 'date', $date);
     }
     
-    public function getSalary($month){                                                         ////////////////////////////////////////////////////////////////////////////////////////
+    public function getSalary($month){                                                         
         return $this->databaseMapper->find($this->salaryTable, [], 'month', $month);
     }
     
     public function isMarked($date){
         $attendance = $this->searchDate($date);
-      //  print_r($attendance);
         return $attendance;
     }
 

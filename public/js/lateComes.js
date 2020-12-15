@@ -6,6 +6,7 @@ $(document).ready(function () {
         },
         url: "http://localhost/PostOffice/AttendanceController/lateComesDetails",
         success: function (data) {
+            console.log(data);
             displaySearchResults(JSON.parse(data));
         }
     });
@@ -41,7 +42,6 @@ function displaySearchResults(data) {
                 }
                 else if(j == 5){
                     var selectElement = document.createElement("input");
-                   // selectElement.setAttribute(maxlenght,"10");
                    selectElement.setAttribute("maxlength",100);
                     var name = "special_note"+values[0];
                     selectElement.setAttribute("name",name);
