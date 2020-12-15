@@ -22,6 +22,10 @@
 	border-radius: 20px;
 }
 
+
+.margin{
+    padding-top: 200px;
+}
 .avatar {
 	width: 100px;
 	height: 100px;
@@ -155,14 +159,15 @@ header .loggedin {
 }
 
 
-/*=================#############======================
+                            /*=================#############======================
 			 							  CSS for HOME(Login) Page
 							===================#############======================*/
 
 
 html,
 body {
-	height: 100%;
+    height: 100%;
+    background-color: rgb(221, 218, 218);
 }
 
 /*=========================================
@@ -212,13 +217,15 @@ body {
 	text-align: center;
 }
 
+
 .Item:hover .Item-icon i {
 	color: rgb(85, 14, 12);
 
 }
 
 .Item-title {
-	margin: 12px 0 0 0;
+    margin: 12px 0 0 0;
+    padding-right: 0px;
 
 }
 
@@ -418,9 +425,16 @@ h4.team-member-name {
 =============================*/
 
 .navbar {
-	padding: 20px 0;
-	-webkit-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
+	display: block;
+	flex-direction: row;
+	background: var(--main-bg-color);
+	color: var(--main-color);
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 101;
+	box-shadow: rgba(0,0,0,0.12) 0px 1px 4px 1px;
 }
 
 .top-nav {
@@ -718,11 +732,15 @@ td {
 
 
 .navigationBar{
-    margin-top: 80px;
+    margin-top: 95px;
 	width: 100%;
 	height: 80px;
 	display: inline-flex;
 	background-image: url(../img/cover.jpg);
+}
+
+.margin{
+    padding-top: initial;
 }
 
 .body-content{
@@ -1840,6 +1858,7 @@ h6 {
 
 h5 {
     font-size: 1em
+    
 }
 
 ul,
@@ -2978,7 +2997,7 @@ header .form-inline .search-form.close {
 
 .content {
     float: left;
-    padding: 1.25em;
+    padding: 4px;
     width: 100%
 }
 
@@ -3337,8 +3356,8 @@ header .form-inline .search-form.close {
 .table-stats table td {
     border: none;
     border-bottom: 1px solid #e8e9ef;
-    color: #868e96;
-    font-size: 12px;
+    color: #ffffff;
+    font-size: 16px;
     font-weight: 400;
     padding: .75em 1.25em;
     text-transform: uppercase

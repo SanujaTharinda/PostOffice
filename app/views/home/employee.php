@@ -83,7 +83,7 @@
                                 <div class="col-md-4">
                                     <div class="Item">
                                         <div class="Item-icon">
-                                            <i class="fa fa-sitemap fa-4x"></i>
+                                            <i class="fa fa-sign-out fa-4x"></i>
                                         </div>
                                         
                                         <div class="Item-title">
@@ -94,7 +94,10 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-md-6">
+                                <!--Empty column-->
+                                <div class="col-md-2"></div>    
+                        
+                                <div class="col-md-4">
                                     <div class="Item">
                                         <div class="Item-icon">
                                             <i class="fa fa-sitemap fa-4x"></i>
@@ -108,7 +111,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="Item">
                                         <div class="Item-icon">
                                             <i class="fa fa-money fa-4x"></i>
@@ -121,6 +124,10 @@
                                         
                                     </div>
                                 </div>
+
+                                <!--Empty column-->
+                                <div class="col-md-2"></div>
+
                                 
                                 </div>
                             </div>

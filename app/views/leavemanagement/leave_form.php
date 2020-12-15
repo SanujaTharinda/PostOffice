@@ -51,7 +51,14 @@
                   </div>
                </div>
             </div>
-         </div>
+		 </div>
+		 
+		 <div class="row">          
+			<div class="col">
+				<a href="<?php echo URLROOT;?>LeaveManagementController/adminLeaveManagementDashboard"><button class="backBtn">Back</button></a>
+			</div>
+		</div>
+					
 
 		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="<?php echo PUBLICROOT; ?>js/leave_form.js"></script>
