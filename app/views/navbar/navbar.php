@@ -32,7 +32,7 @@ $username = $_SESSION['username'];
                                 <ul class="nav navbar-nav">
                                     
                                     <li><a href=<?php echo HOME_CLICK;?>>Home</a></li>
-                                    <li><a href=<?php echo ABOUT_CLICK;?>>About</a></li>
+                                    <li><a href=<?php echo ABOUT_CLICK;?>>Help</a></li>
                                     
                                     <li>
                                         <a class="nav-link " href="<?php echo PROFILE_CLICK;?>"> 
