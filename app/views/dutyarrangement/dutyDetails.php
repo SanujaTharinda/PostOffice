@@ -21,7 +21,7 @@
         <div class="addDutyBar">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-10">
                         <div class="dutyDetailHeader">
                             <h5>Duty Arrangement</h5>
                         </div>
@@ -31,9 +31,7 @@
                     <div class="col-md-2">
                         <a href="<?php echo URLROOT;?>DutyArrangementController/addDutyPage"><button class="addDutyBtn">Add Duty</button></a>
                     </div>
-                    <div class="col-md-3">
-                        <a href="<?php echo URLROOT;?>OtManagementController/otManagement"><button class="addDutyBtn">OT Management</button></a>
-                    </div>
+                    
                 </div>
             </div>
         </div>                                                                                                                                                                                      
