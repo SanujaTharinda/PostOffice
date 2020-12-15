@@ -21,8 +21,9 @@ function getTodayDate() {
 $(document).ready(function () {
   $.ajax({
     type: "GET",
-    url: "http://localhost/PostOffice/AttendanceController/getAttendance",
+    url: "http://localhost/PostOffice/AttendanceController/getAttendanceDashboard",
     success: function (data) {
+      console.log(data);
       displayCharts(JSON.parse(data));
     },
   });
@@ -32,8 +33,6 @@ function displayCharts(values) {
   let lastWeekAttendance = values.pop();
   let previousDayAttendance = values.pop();
   let todayAttendance = values.pop();
-
-
 
   if (!(Object.keys(todayAttendance).pop() == getTodayDate())) {
     previousDayAttendance = Object.assign({}, todayAttendance);

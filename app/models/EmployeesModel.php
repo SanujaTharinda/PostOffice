@@ -33,22 +33,26 @@ class EmployeesModel extends Model{
 
     private function getLoggedDay($dayId){
         $dateArray =  $this->databaseMapper->find($this->logTable, ['date'], 'id', $dayId);
-        $date = array_shift($dateArray)->date;
-        $loggedDay = null;
-        if(isset($date)){
-            $loggedDay = $date;
+        if(empty($dateArray)){
+            return null;
         }
-        return $loggedDay;
+        return array_shift($dateArray)->date;
     }
 
 
     public function getAttendance(){
 
         $lastLoggedDayId = $this->getMaxId();
+       
         $lastLoggedDay = $this->getLoggedDay($lastLoggedDayId);
+        
+        
         $previousLoggedDay = $this->getLoggedDay($lastLoggedDayId - 1);
+   
         $finalDayAttendance = $this->getAttendanceDay($lastLoggedDay);
+        
         $previousDayAttendance = $this->getAttendanceDay($previousLoggedDay);
+
         $lastWeekAttendance = $this->getAttendanceLastWeek($lastLoggedDayId);
 
         return array($finalDayAttendance, $previousDayAttendance,$lastWeekAttendance );
@@ -123,9 +127,10 @@ class EmployeesModel extends Model{
     public function getAttendanceDay($day){
         $countArray = "Not-Marked";
         if(isset($day)){
-            $data = $this->databaseMapper->find($this->attendanceTable, ['presence', 'date'], 'date', $day);
+            $data = $this->databaseMapper->find($this->attendanceTable, ['presence'], 'date', $day);
             $countArray = $this->getAttendanceCount($data);
         }
+
         return array($day => $countArray);
 
     }
@@ -136,9 +141,9 @@ class EmployeesModel extends Model{
         $absent = 0;
         foreach($data as $row){
             $status = $row->presence;
-            if($status == "Present"){
+            if($status == "present"){
                 $present = $present + 1;
-            }elseif ($status == "Absent") {
+            }elseif ($status == "absent") {
                 $absent = $absent + 1;
             }
         }
