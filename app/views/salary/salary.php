@@ -47,7 +47,7 @@
                                         <div class="searchDate">
                                             <input id="DialogDemo" class='Default' type="text" name="cmonth" autocomplete="off">
                                             <input onclick="searchMonth()"  type="button" name="submit" value="Search" class="salarySearch">
-                                            <input  onkeyup="setDailyRate(this.value)"  type="text" name="salaryValue">
+                                            <div class="dailyRate"><input  onkeyup="setDailyRate(this.value)"  type="text" name="salaryValue" placeholder="Enter daily rate here"></div>
                                         </div> 
 
                                             <table class="table table-hover">
