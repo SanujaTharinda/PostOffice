@@ -87,22 +87,16 @@ function drawCharts(todayPresent, todayAbsent, previousDayPresent, previousDayAb
 
   let data = [{
       value: (todayPresent / (todayPresent + todayAbsent)) * 360,
-      color: "cornflowerblue",
-      highlight: "lightskyblue",
+      color: "rgb(119,136,153)",
+      highlight: "#6e7175",
       label: "present",
     },
     {
       value: (todayAbsent / (todayPresent + todayAbsent)) * 360,
-      color: "lightgreen",
-      highlight: "yellowgreen",
+      color: "#ff7f78",
+      highlight: "#FF4F58",
       label: "absent",
     },
-    // {
-    //   value: 40,
-    //   color: "orange",
-    //   highlight: "darkorange",
-    //   label: "late commers",
-    // },
   ];
 
   let chart = new Chart(ctx).Doughnut(data);
@@ -111,22 +105,16 @@ function drawCharts(todayPresent, todayAbsent, previousDayPresent, previousDayAb
 
   data = [{
       value: (previousDayPresent / (previousDayPresent + previousDayAbsent)) * 360,
-      color: "cornflowerblue",
-      highlight: "lightskyblue",
+      color: "rgb(119,136,153)",
+      highlight: "#6e7175",
       label: "present",
     },
     {
       value: (previousDayAbsent / (previousDayPresent + previousDayAbsent)) * 360,
-      color: "lightgreen",
-      highlight: "yellowgreen",
+      color: "#ff7f78",
+      highlight: "#FF4F58",
       label: "absent",
     },
-    // {
-    //   value: 40,
-    //   color: "orange",
-    //   highlight: "darkorange",
-    //   label: "late commers",
-    // },
   ];
 
   chart = new Chart(ctx).Doughnut(data);
@@ -135,22 +123,16 @@ function drawCharts(todayPresent, todayAbsent, previousDayPresent, previousDayAb
 
   data = [{
       value: (lastWeekPresent / (lastWeekPresent + lastWeekAbsent)) * 360,
-      color: "cornflowerblue",
-      highlight: "lightskyblue",
+      color: "rgb(119,136,153)",
+      highlight: "#6e7175",
       label: "present",
     },
     {
       value: (lastWeekAbsent / (lastWeekPresent + lastWeekAbsent)) * 360,
-      color: "lightgreen",
-      highlight: "yellowgreen",
+      color: "#ff7f78",
+      highlight: "#FF4F58",
       label: "absent",
     },
-    // {
-    //   value: 40,
-    //   color: "orange",
-    //   highlight: "darkorange",
-    //   label: "late commers",
-    // },
   ];
 
   chart = new Chart(ctx).Doughnut(data);
