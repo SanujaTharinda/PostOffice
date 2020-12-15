@@ -15,8 +15,6 @@ $username = $_SESSION['username'];
 
                             <div class="navbar-header">
 
-
-
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
                                     <span class="sr-only">Toggle navigation</span>
                                     <span class="icon-bar"></span>
@@ -36,15 +34,13 @@ $username = $_SESSION['username'];
                                     <li><a href=<?php echo HOME_CLICK;?>>Home</a></li>
                                     <li><a href=<?php echo ABOUT_CLICK;?>>About</a></li>
                                     
-                                    
                                     <li>
                                         <a class="nav-link " href="<?php echo PROFILE_CLICK;?>"> 
-                                            <i class="far fa-user-circle fa-2x"></i>
+                                            <i class="far fa-user-circle fa-1x"></i>
                                             <?php echo $username;?>
                                         </a>
                                     </li>
                                     
-
 
                                     <li><a class="btn btn-logout" href="<?php echo LOGOUT_CLICK;?>">Logout</a></li>
                                 </ul>

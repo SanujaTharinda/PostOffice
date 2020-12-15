@@ -19,47 +19,6 @@
 
 	<?php require_once APPROOT.'/views/navbar/navbar.php'; ?>
 	
-	<!-- <div class="navbar">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a class="nav-link">
-					<i class="fas fa-bars" onclick="collapseSidebar()"></i>
-				</a>
-			</li>
-			<li class="nav-item">
-				<h2>DASHBOARD</h2>
-				
-			</li>
-		</ul>
-	</div>
-
-	<div class="sidebar">
-		<ul class="sidebar-nav">
-			<li class="sidebar-nav-item">
-				<a href="<?php echo URLROOT; ?>AttendanceController/markAttendance" class="sidebar-nav-link">
-					<div>
-						<i class="fas fa-tachometer-alt"></i>
-					</div>
-					<span>
-						mark attendance
-					</span>
-				</a>
-			</li>
-			<li class="sidebar-nav-item">
-				<a href="<?php echo URLROOT; ?>AttendanceController/showAttendance" class="sidebar-nav-link">
-					<div>
-						<i class="fab fa-accusoft"></i>
-					</div>
-					<span>
-						view attendance
-					</span>
-				</a>
-			</li>
-			
-		</ul>
-	</div> -->
-	
-
 	 <div class="addDutyBar h">
             <div class="container">
                 <div class="row">
@@ -82,27 +41,18 @@
 		<div class="row">
 			<div class="col-4 col-m-6 col-sm-6">
 				<div class="counter bg-primary">
-					<p>
-						<i class="fas fa-tasks"></i>
-					</p>
 					<h3 id="todayemployee"></h3>
 					<p><h2>Employees</h2></p>
 				</div>
 			</div>
 			<div class="col-4 col-m-6 col-sm-6">
 				<div class="counter bg-warning">
-					<p>
-						<i class="fas fa-spinner"></i>
-					</p>
 					<h3 id="todaypresent"></h3>
 					<p><h2>Present</h2></p>
 				</div>
 			</div>
 			<div class="col-4 col-m-6 col-sm-6">
 				<div class="counter bg-success">
-					<p>
-						<i class="fas fa-check-circle"></i>
-					</p>
 					<h3 id="todayabsent"></h3>
 					<p><h2>Absent</h2></p>
 				</div>
