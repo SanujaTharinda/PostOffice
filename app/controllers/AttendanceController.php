@@ -22,6 +22,13 @@ class AttendanceController extends Controller{
         echo json_encode($data);
     }
 
+    public function getAttendanceDashboard(){
+        $data = $this->employeeModel->getAttendance();
+        echo json_encode ($data);
+    }
+
+    
+
     public function showAttendance(){   
         $this->view('attendance/showAttendance');
     }

@@ -6,7 +6,7 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:400,600,700";
 
 body.body-content {
-  margin: 0;
+  margin: 80px 0 0 0;
   padding: 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,6 +16,15 @@ body.body-content {
 html,
 body {
   height: 100%;
+}
+
+.leave-body{
+  padding-top: 70px;
+  background-color: lightgray;
+}
+
+.panel{
+  padding-top: 70px;
 }
 
 .addDutyBar {
@@ -384,7 +393,7 @@ table {
 
 .col-lg-12 {
   max-width: 50%;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .card {
@@ -551,9 +560,17 @@ table {
 =============================*/
 
 .navbar {
-  padding: 20px 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  display: block;
+	flex-direction: row;
+	background: var(--main-bg-color);
+	color: var(--main-color);
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 101;
+	box-shadow: rgba(0,0,0,0.12) 0px 1px 4px 1px;
+  
 }
 
 .top-nav {

@@ -32,10 +32,25 @@
                         <div class="col-xl-12">
                             <div class="card"> 
                                 <div class="card-body--">
-                                    <div class="table-stats order-table ov-h">
-                                        <div class="searchDate">
-                                            <input type="date" oninput='searchDetails(this.value)' name="start_date" id="start_date">
-                                        </div> 
+                                    <div class="table-stats  ov-h">
+                                    
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                            <div class="col-md-8">
+                                                <div class="searchDate">
+                                                    <input type="date" oninput='searchDetails(this.value)' name="start_date" id="start_date">
+                                                </div> 
+                                            </div> 
+
+                                            <div class="col-md-4">
+                                                <a href="<?php echo URLROOT;?>AttendanceController/attendanceDashboard"><button class="themeBtn">Back</button></a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
 
                                             <table class="table table-hover">
                                                 <thead>

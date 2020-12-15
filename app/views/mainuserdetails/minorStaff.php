@@ -27,6 +27,18 @@
 
         <?php require_once(APPROOT."/views/navbar/navbar.php")?>
 
+        <div class="container">
+            <div class="row">
+                                            
+                <div class="col-md-11"></div> 
+
+                <div class="col-md-1">
+                    <a href="<?php echo URLROOT;?>MainUserDetailsController/mainUserDetails"><button class="themeBtn">Back</button></a>
+                </div>
+
+            </div>
+        </div>
+
         </nav> 
 
       
@@ -38,7 +50,7 @@
                      <div class="card">
                         
                         <div class="card-body--">
-                           <div class="table-stats order-table ov-h">
+                           <div class="table-stats ov-h">
 
                                 <table class="table table-hover">
                                     <thead>
