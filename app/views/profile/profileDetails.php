@@ -1,7 +1,4 @@
-<?php session_start();
-$username = $_SESSION['username'];
-$userType = $_SESSION['usertype'];
-?>
+
 
 
 <!DOCTYPE html>
@@ -38,6 +35,11 @@ $userType = $_SESSION['usertype'];
 <body>
     <!--NAVIGATION BAR-->
     <?php require_once(APPROOT."/views/navbar/navbar.php")?>
+
+    <?php
+        $username = $_SESSION['username'];
+        $userType = $_SESSION['usertype'];
+    ?>
 
     <div class = 'profile container-fluid'>
         <h1 class = 'profile-heading'>Profile</h1>

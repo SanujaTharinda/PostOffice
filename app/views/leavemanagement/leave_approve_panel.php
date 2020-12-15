@@ -1,8 +1,3 @@
-<?php
-session_start();
-$usertype = $_SESSION['usertype'];
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -20,6 +15,10 @@ $usertype = $_SESSION['usertype'];
       <nav class="navigationBar">
       
       <?php require_once(APPROOT."/views/navbar/navbar.php");?>
+
+      <?php
+      $usertype = $_SESSION['usertype'];
+      ?>
 
       </nav>
 
