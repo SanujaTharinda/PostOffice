@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <html>
     <head>
-    <title><?php echo SITENAME; ?></title> 
+    <title>Salary</title> 
 
         <link href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css">
         <script src="http://code.jquery.com/jquery-1.12.1.min.js"></script>

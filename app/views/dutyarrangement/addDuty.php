@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Add Duty</title>
 
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/normalize.css">
 		<link rel="stylesheet" href="<?php echo PUBLICROOT;?>css/form/bootstrap.min.css">

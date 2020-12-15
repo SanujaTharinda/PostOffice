@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/responsive.css">
         <link rel="stylesheet" href="<?php echo PUBLICROOT; ?>css/profile.css">
 
-    <title>Post Office</title>
+    <title>Profile</title>
 </head>
 <body>
     <!--NAVIGATION BAR-->
