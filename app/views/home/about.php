@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>About</title>
+    <title>Help</title>
 
     <!--google fonts-->
     <link rel="stylesheet"
