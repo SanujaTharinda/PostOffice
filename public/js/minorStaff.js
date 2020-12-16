@@ -42,7 +42,7 @@ function addUser(data){
     var selectElement = document.getElementById("user");
     docFragment = document.createDocumentFragment();
     const numberOfRows = data.length;
-    console.log(numberOfRows);
+   // console.log(numberOfRows);
 
     if(numberOfRows !=0){
         for (let i = 0; i < numberOfRows; i++) {

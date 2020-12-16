@@ -1,8 +1,8 @@
 import {getTodayDate} from './helpers/timeAndDate.js';
 
 
-let submit = document.getElementById('markAttendance');
-submit.addEventListener("click", log, false);
+let submit = document.getElementById('mark');
+submit.addEventListener("click", log);
 
 function log(){
     const today = getTodayDate();

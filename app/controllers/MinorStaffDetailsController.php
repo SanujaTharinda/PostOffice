@@ -42,9 +42,9 @@ class MinorStaffDetailsController extends Controller {
                 'address'=>$_POST['address'],
                 'telephone'=>$_POST['telephone'],
                 'gender'=>$_POST['gender'],
-                'firstday'=>$_POST['first_day'],
-                'registered_day'=>$_POST['registered_day'],
-                'permenent_day'=>$_POST['permenent_day'],
+                'firstday'=>$_POST['date_1'],
+                'registered_day'=>$_POST['date_2'],
+                'permenent_day'=>$_POST['date_3'],
                 'carrier'=>$_POST['carrier'],
                 'reg'=>$_POST['reg'],
                 'user'=>$_POST['user']

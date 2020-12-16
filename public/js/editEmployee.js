@@ -1,7 +1,7 @@
 let firstDay = '';
 let regDay = '';
 let perDay = '';
-document.getElementById("minorStaffSave").disabled = true;
+//document.getElementById("minorStaffSave").disabled = true;
 
 function checkFirstDate(date){
     firstDay = date;

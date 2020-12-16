@@ -96,12 +96,12 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
-    <script src="<?php echo PUBLICROOT."/js/log.js" ?>" type = 'module'></script>
       
     <script src="<?php echo URLROOT; ?>public/js/markAttendance.js"></script>
 
     <script src="<?php echo PUBLICROOT; ?>js/custom.js"></script>
 
+    <script src="<?php echo PUBLICROOT."/js/log.js" ?>" type = 'module'></script>
     
  
     </body>

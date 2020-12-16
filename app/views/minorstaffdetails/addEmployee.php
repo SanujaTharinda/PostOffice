@@ -71,21 +71,23 @@
 											<div class="form-group">
 												<div class="form-label">
 													<label class=" form-control-label">Date of first come</label>
-													<input type="date" value="<?php echo $date_1?>" name="date_1"  class="form-control" required>
+													<input type="date" oninput='checkFirstDate(this.value)' value="<?php echo $date_1?>" name="date_1"  class="form-control" required>
 												</div>
 											</div>
 											
 											<div class="form-group">
 												<div class="form-label">
 													<label class=" form-control-label">Date of registered</label>
-													<input type="date" value="<?php echo $date_2?>" name="date_2"  class="form-control" required>
+													<input type="date" oninput='checkRegDate(this.value)' value="<?php echo $date_2?>" name="date_2"  class="form-control" required>
+													<small id="regDay_error">Registerd day cannot be smaller than first day</small>
 												</div>
 											</div>
 
 											<div class="form-group">
-												<div class="form-label">
+												<div class="form-label" id="perDay">
 													<label class=" form-control-label">Date of permenent the appoinment</label>
-													<input type="date" value="<?php echo $date_3?>" name="date_3"  class="form-control" required>
+													<input type="date" oninput='checkPermanentDate(this.value)' value="<?php echo $date_3?>" name="date_3"  class="form-control" required>
+													<small id="perDay_error">Permanent day cannot be smaller than first day</small>
 												</div>
 											</div>
 
@@ -114,7 +116,7 @@
 												</select>
 											</div>
 
-										<button  type="submit" name="submit" class="btn btn-lg btn-info btn-block">
+										<button  id="minorStaffSave" type="submit" name="submit" class="btn btn-lg btn-info btn-block">
 											<span id="payment-button-amount">Submit</span>
 										</button>
 										</form>
