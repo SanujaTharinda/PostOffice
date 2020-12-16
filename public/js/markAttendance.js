@@ -53,9 +53,12 @@ function displaySearchResults(data) {
         }
         $('#inform').css('visibility','hidden');
         const div = document.getElementById('mark');
-        div.innerHTML = `
-          <button type="submit" name="save" id="markAttendance">Submit</button>
-        `;
+        let submit = document.createElement('button');
+        submit.setAttribute('id', 'markAttendance');
+        submit.setAttribute('type', 'submit');
+        submit.setAttribute('name', 'save');
+        submit.innerHTML = 'Submit';
+        div.appendChild(submit);
         document.getElementById('content').appendChild(div);
 
 
